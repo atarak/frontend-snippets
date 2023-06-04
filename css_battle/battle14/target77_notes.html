@@ -1,0 +1,82 @@
+<div></div>
+<div class="note">
+    <div class="stem"></div>
+    <div class="halfbar"></div>
+</div>
+<div class="note">
+    <div class="stem"></div>
+    <div class="second"></div>
+</div>
+<div class="note third">
+    <div class="stem third"></div>
+    <div class="halfbar third"></div>
+</div>
+<div class="note">
+    <div class="stem"></div>
+    <div class="halfbar"></div>
+    <div class="fourth"></div>
+</div>
+<style>
+    *,
+    *::before,
+    *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #191919;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 170px;
+        margin-left: -50px;
+    }
+
+    .note {
+        width: 50px;
+        height: 40px;
+        background: #FE5F55;
+        border-radius: 50%;
+        top: 100px;
+    }
+
+    .note .stem {
+        width: 10px;
+        height: 90px;
+        background: inherit;
+        margin-top: -75px;
+        margin-left: 40px;
+    }
+
+
+    .halfbar {
+        position: absolute;
+        width: 10%;
+        height: 3.4%;
+        margin-left: calc(10%);
+        margin-top: -95px;
+        background: inherit;
+    }
+
+    .fourth {
+        height: 25%;
+        width: 60%;
+        margin-top: -75px;
+        margin-left: calc(100%);
+        background: inherit;
+    }
+
+    .third {
+        background: #A64942;
+    }
+
+    .second {
+        height: 25%;
+        width: 81.3%;
+        margin-top: -95px;
+        margin-left: .6em;
+        background: inherit;
+    }
+</style>

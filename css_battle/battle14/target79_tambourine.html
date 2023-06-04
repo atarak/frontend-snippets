@@ -1,0 +1,83 @@
+<div class="outer">
+    <div class="overlap"></div>
+</div>
+<div class="overlap2"></div>
+<div class="inner a"></div>
+<div class="inner b"></div>
+<div class="inner c"></div>
+<div class="inner d"></div>
+<div class="inner e"></div>
+
+<style>
+    body {
+        background: #6592CF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div {
+        border-radius: 50%;
+        aspect-ratio: 1;
+    }
+
+    .outer {
+        margin-top: 20px;
+        width: 150px;
+        border: 10px solid #243D83;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .overlap {
+        position: absolute;
+        width: 60%;
+        border: inherit;
+        background: #6592CF;
+        /*     background: red; */
+        bottom: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .overlap2 {
+        background: #6592CF;
+        ;
+        position: absolute;
+        width: 100;
+        bottom: -10px;
+        border: inherit;
+    }
+
+    .inner {
+        position: absolute;
+        width: 10px;
+        background: #243D83;
+        border: solid 10px #6592CF;
+        outline: solid 10px #243D83;
+    }
+
+    .a {
+        top: 65;
+    }
+
+    .b {
+        left: 115;
+        top: 105;
+    }
+
+    .c {
+        left: 115;
+        top: 175;
+    }
+
+    .d {
+        left: 255;
+        top: 105;
+    }
+
+    .e {
+        left: 255;
+        top: 175;
+    }
+</style>

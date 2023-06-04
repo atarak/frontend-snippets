@@ -1,0 +1,112 @@
+<div>
+    <div class="circle a"></div>
+    <div class="bar vert"></div>
+    <div class="circle b">
+        <div class="circle b b1"></div>
+    </div>
+    <div class="bar horiz long"></div>
+    <div class="bar handle"></div>
+    <div class="bar small s1"></div>
+    <div class="bar small s2"></div>
+</div>
+<style>
+    *::before,
+    *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #F3AC3C;
+        display: flex;
+        justify-contents: center;
+    }
+
+    .circle {
+        position: relative;
+        background: #998235;
+        border-radius: 50%;
+    }
+
+    .a {
+        position: absolute;
+        margin-top: 82px;
+        margin-left: 37px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .b {
+        position: absolute;
+        margin-top: 92px;
+        margin-left: 105px;
+        width: 101px;
+        height: 101px;
+    }
+
+    .b1 {
+        background: #1A4341;
+        width: 40px;
+        height: 40px;
+        border: 5px solid #F3AC3C;
+        margin-top: 25px;
+        margin-left: 28px;
+    }
+
+    .bar {
+        background: #1A4341;
+        border-radius: 5px;
+    }
+
+    .vert {
+        position: absolute;
+        width: 10px;
+        height: 40px;
+        margin-top: 122px;
+        margin-left: 77px;
+    }
+
+    .long {
+        position: absolute;
+        width: 130px;
+        height: 20px;
+        z-index: -1;
+        margin-top: 132px;
+        margin-left: 200px;
+    }
+
+
+    .small {
+        position: absolute;
+        width: 20px;
+        height: 4px;
+        gap: 5px;
+        border-radius: 2px;
+        margin-top: 135px;
+        margin-left: 317px;
+    }
+
+    .s2 {
+        margin-top: 145px;
+        margin-left: 317px;
+    }
+
+    .handle {
+        position: absolute;
+        width: 40px;
+        height: 30px;
+        background: #998235;
+        margin-top: 127px;
+        margin-left: 307px;
+        border-radius: 10px;
+    }
+</style>
+
+<!-- OBJECTIVE -->
+<!-- Write HTML/CSS in this editor and replicate the given target image in the least code possible. What you write here, renders as it is -->
+
+<!-- SCORING -->
+<!-- The score is calculated based on the number of characters you use (this comment included :P) and how close you replicate the image. Read the FAQS (https://cssbattle.dev/faqs) for more info. -->
+
+<!-- IMPORTANT: remove the comments before submitting -->
