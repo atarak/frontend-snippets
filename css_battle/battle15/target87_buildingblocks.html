@@ -1,0 +1,78 @@
+<div class="outer one"></div>
+<div class="inner"></div>
+<div class="outer two"></div>
+<style>
+    body {
+        background: #F3AC3C;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .inner,
+    .outer {
+        aspect-ratio: 1;
+        border-radius: 10px;
+    }
+
+    .inner {
+        background: #F3AC3C;
+        width: 70px;
+        margin-top: -1px;
+    }
+
+    .outer {
+        width: 100px;
+        height: 100px;
+        background: red;
+        background: #1A4341;
+        z-index: -1;
+    }
+
+    .one {
+        transform: translateY(-35%);
+    }
+
+    .two {
+        transform: translateY(35%);
+    }
+
+    .one::before,
+    .one::after,
+    .two::before,
+    .two::after {
+        display: block;
+        content: "";
+        background: #1A4341;
+    }
+
+    .one::after,
+    .two::after {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+    }
+
+    .one::before {
+        width: 60px;
+        height: 50px;
+        transform: translateX(150%);
+        border-radius: 0 10px 10px 0;
+    }
+
+    .one::after {
+        transform: translateX(460%);
+    }
+
+    .two::before {
+        width: 68px;
+        height: 50px;
+        transform: translateX(-73.5%) translateY(100%);
+        border-radius: 10px 0 0 10px;
+    }
+
+    .two::after {
+        transform: translateX(-70%) translateY(-10px);
+    }
+</style>

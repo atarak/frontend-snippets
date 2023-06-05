@@ -1,0 +1,39 @@
+<div class="sq1"></div>
+<style>
+    body {
+        background: #F3AC3C;
+    }
+
+    .sq1 {
+        aspect-ratio: 1;
+        position: relative;
+        width: 30px;
+        background: #dd6b4d;
+        margin-left: 140.3;
+        margin-top: 100.2;
+        transform: rotate(45deg);
+        border: solid 35.4px #F3AC3C;
+        outline: solid 30px #998235;
+    }
+
+    .sq1::before {
+        aspect-ratio: 1;
+        content: "";
+        position: absolute;
+        width: 76.2px;
+        margin-left: -76px;
+        margin-top: -76px;
+        outline: 30px solid #F3AC3C;
+    }
+
+    .sq1::after {
+        content: "";
+        position: absolute;
+        height: 31px;
+        width: 30px;
+        background: #1A4341;
+
+        margin-left: 0.2px;
+        margin-top: -.5px;
+    }
+</style>
