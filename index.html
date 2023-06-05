@@ -16,6 +16,8 @@
     body {
         --clr-bg-primary: lightgray;
         --clr-primary-900: rgb(13, 5, 79);
+        --clr-target-status-default: lightgray;
+        --clr-target-status: var(--clr-target-status-default);
         margin: 0;
         display: flex;
         align-items: center;
@@ -80,8 +82,47 @@
 
     .battle-list p {
         margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
         font-size: 1em;
         font-weight: 700;
+        display: inline;
+    }
+
+    .target-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        margin-bottom: 1em;
+    }
+
+    .target-status-icon[data-target-status="0"] {
+        --clr-target-status: var(--clr-target-status-default);
+    }
+
+    .target-status-icon[data-target-status="1"] {
+        --clr-target-status: red;
+    }
+
+    .target-status-icon[data-target-status="2"] {
+        --clr-target-status: yellow;
+    }
+
+    .target-status-icon[data-target-status="3"] {
+        --clr-target-status: green;
+    }
+
+    .target-status-icon {
+        width: 1em;
+        height: 1em;
+        background: var(--clr-target-status);
+        border-radius: 50%;
+        border: 1px solid black;
+        margin: 0;
+        padding: 0;
+        display: block;
+        opacity: 0.35;
     }
 </style>
 
@@ -93,22 +134,34 @@
                 <li>
                     <img src="https://cssbattle.dev/targets/77.png" width="373" heigh="200">
                     <a href="css_battle/battle14/target77_notes.html">
-                        <p>#77: Notes</p>
+                        <div class="target-title">
+                            <span class="target-status-icon" data-target-status="2"></span>
+                            <p>#77: Notes</p>
+                        </div>
                     </a>
                 </li>
                 <li><img src="https://cssbattle.dev/targets/78.png" width="373" heigh="200">
                     <a href="css_battle/battle14/target78_ukelele.html">
-                        <p>#78: Ukelele</p>
+                        <div class="target-title">
+                            <span class="target-status-icon" data-target-status="3"></span>
+                            <p>#78: Ukelele</p>
+                        </div>
                     </a>
                 </li>
                 <li><img src="https://cssbattle.dev/targets/79.png" width="373" heigh="200">
                     <a href="css_battle/battle14/target79_tambourine.html">
-                        <p>#79: Tambourine</p>
+                        <div class="target-title">
+                            <span class="target-status-icon" data-target-status="2"></span>
+                            <p>#79: Tambourine</p>
+                        </div>
                     </a>
                 </li>
                 <li><img src="https://cssbattle.dev/targets/80.png" width="373" heigh="200">
                     <a href="css_battle/battle14/target80_piano.html">
-                        <p>#80: Piano</p>
+                        <div class="target-title">
+                            <span class="target-status-icon" data-target-status="3"></span>
+                            <p>#80: Piano</p>
+                        </div>
                     </a>
                 </li>
             </ul>
