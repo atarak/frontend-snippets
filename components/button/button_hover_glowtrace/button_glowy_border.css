@@ -1,0 +1,113 @@
+/* https://www.conic.style/ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    min-height: 100vh;
+    background-image: conic-gradient(at 125% 50%, #b78cf7, #ff7c94, #ffcf0d, #ff7c94, #b78cf7);
+    font-family: system-ui;
+}
+
+.button {
+    cursor: pointer;
+    font-size: 2rem;
+    font-family: inherit;
+    font-weight: 700;
+    color: hsl(320, 40%, 40%);
+    padding: 0.75em 1.25em;
+    border: 0;
+    border-radius: 1.25rem;
+}
+
+.glow-effect {
+    /* do not change, used for calculations */
+    --container-offset: 100px;
+
+    --glow-offset: 0px;
+    --glow-line-color: #fff;
+    --glow-line-thickness: 3px;
+    --glow-line-length: 20px;
+    --glow-blur-color: #fff;
+    --glow-blur-size: 10px;
+    --animation-speed: 1200ms;
+    position: relative;
+}
+
+.glow-container {
+    pointer-events: none;
+    position: absolute;
+    inset: calc(var(--container-offset)/-2);
+    width: calc(100% + var(--container-offset));
+    height: calc(100% + var(--container-offset));
+
+    /* outline: 3px solid blue; */
+    opacity: 0;
+}
+
+.glow-blur,
+.glow-line {
+    width: calc(100% - var(--container-offset) + var(--glow-offset));
+    height: calc(100% - var(--container-offset) + var(--glow-offset));
+    x: calc((var(--container-offset)/2) + calc(var(--glow-offset)/-2));
+    y: calc((var(--container-offset)/2) + calc(var(--glow-offset)/-2));
+    /* rx: 1.25rem; */
+    fill: transparent;
+    /* stroke: black; */
+    stroke-width: 5px;
+    stroke-dasharray: var(--glow-line-length) calc(50px - var(--glow-line-length));
+    /* transition: stroke-dashoffset 2000ms; */
+}
+
+/* .glow-effect:hover .glow-blur,
+.glow-effect:hover .glow-line {
+    stroke-dashoffset: -65px;
+} */
+
+.glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
+    stroke-dashoffset: -80px;
+    transition: stroke-dashoffset var(--animation-speed) ease-in;
+}
+
+.glow-line {
+    stroke: var(--glow-line-color);
+    stroke-width: var(--glow-line-thickness);
+}
+
+.glow-blur {
+    filter: blur(var(--glow-blur-size));
+    stroke: var(--glow-blur-color);
+    stroke-width: var(--glow-blur-size);
+}
+
+.glow-effect:is(:hover, :focus) .glow-container {
+    animation: glow-visibility var(--animation-speed);
+}
+
+@keyframes glow-visibility {
+
+    0%,
+    100% {
+        opacity: 0
+    }
+
+    25%,
+    75% {
+        opacity: 1
+    }
+}
+
+.glow-effect[data-glow-animation="false"] {
+    --glow-line-length: 50px;
+}
+
+
+.glow-effect[data-glow-offset="true"] {
+    --glow-offset: 10px;
+}

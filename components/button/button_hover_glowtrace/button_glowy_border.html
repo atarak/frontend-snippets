@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./button_glowy_border.js" defer></script>
+    <title>Button with Animated Glowing Border</title>
+    <link rel="stylesheet" href="./button_glowy_border.css">
+    <!-- https://www.youtube.com/watch?v=fcnDBP3k3BE -->
+</head>
+
+<body>
+    <button class="button glow-effect">
+        Hi there
+        <svg class="glow-container">
+            <rect class="glow-blur" pathLength="100" stroke-linecap="round"></rect>
+            <rect class="glow-line" pathLength="100" stroke-linecap="round"></rect>
+        </svg>
+    </button>
+
+    <button class="button glow-effect" data-glow-animation="false">
+        Hi there again!
+        <svg class="glow-container">
+            <rect class="glow-blur" pathLength="100" stroke-linecap="round"></rect>
+            <rect class="glow-line" pathLength="100" stroke-linecap="round"></rect>
+        </svg>
+    </button>
+
+    <button class="button glow-effect" data-glow-offset="true" data-glow-animation="false">
+        Hi there 3!
+        <svg class="glow-container">
+            <rect class="glow-blur" pathLength="100" stroke-linecap="round"></rect>
+            <rect class="glow-line" pathLength="100" stroke-linecap="round"></rect>
+        </svg>
+    </button>
+</body>
+
+</html>
