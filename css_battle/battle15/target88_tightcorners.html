@@ -1,0 +1,64 @@
+<div class="s one"></div>
+<div class="s two"></div>
+<style>
+    body {
+        /*     background: #D25B70; */
+        background: #F7F3DA;
+    }
+
+    .one {
+        width: 220px;
+        height: 40px;
+        background: #D25B70;
+        transform: translateX(191px) translateY(142px);
+        border-radius: 0 12px 0;
+    }
+
+    .one::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: #D25B70;
+        border-radius: 50%;
+        transform: translateX(-20px) translateY(-17px);
+    }
+
+    .one::after {
+        content: "";
+        display: block;
+        width: 220px;
+        height: 30px;
+        background: blue;
+        background: #F7F3DA;
+        transform: translateX(-219px) translateY(-40px);
+        border-radius: 27px;
+    }
+
+    .two {
+        width: 230px;
+        height: 40px;
+        background: #D25B70;
+        transform: translateX(-40px) translateY(62px);
+        border-radius: 0 8px;
+    }
+
+    .two::after {
+        content: "";
+        display: block;
+        width: 220px;
+        height: 30px;
+        background: blue;
+        background: #F7F3DA;
+        transform: translateX(232px) translateY(10px);
+        border-radius: 30px;
+    }
+</style>
+
+<!-- OBJECTIVE -->
+<!-- Write HTML/CSS in this editor and replicate the given target image in the least code possible. What you write here, renders as it is -->
+
+<!-- SCORING -->
+<!-- The score is calculated based on the number of characters you use (this comment included :P) and how close you replicate the image. Read the FAQS (https://cssbattle.dev/faqs) for more info. -->
+
+<!-- IMPORTANT: remove the comments before submitting -->
