@@ -24,6 +24,7 @@
         justify-content: center;
         color: var(--clr-primary-900);
         background: white;
+        font-size: 85.2%;
     }
 
     main {
@@ -50,6 +51,12 @@
         width: 100%;
     }
 
+    .section-title a,
+    h2 {
+
+        color: rgb(68, 74, 73);
+    }
+
     .section-title::before {
         content: "";
         display: block;
@@ -58,13 +65,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        /* background: radial-gradient(transparent 80%, rgb(66, 66, 66)); */
-        /* background: radial-gradient(transparent 80%, rgb(121, 120, 120)); */
-        /* background: blue; */
     }
 
     a {
         text-decoration: none;
+    }
+
+    .battle-list a {
         color: var(--clr-primary-900);
     }
 
@@ -75,34 +82,43 @@
 
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 13em;
         text-align: center;
         gap: 1em;
     }
 
-    .battle-list li {
+    .battle-list .card {
         /* border: 2px solid var(--clr-primary-900); */
+        display: grid;
+        grid-template-rows: 9em 1em;
+        align-content: center;
+        justify-content: center;
         border-radius: 20px;
         overflow: hidden;
         background: white;
-        box-shadow: 0 0 4px 1px rgb(90, 90, 90);
+        box-shadow: 0 0 4px 1px rgb(68, 74, 73);
         min-width: 120px;
+        height: 100%;
     }
 
     .battle-list img {
-        max-width: 15em;
-        max-height: 10em;
-        min-width: 220px;
+        max-width: 160px;
+        max-height: 9em;
+        min-width: 60px;
         height: auto;
         width: auto;
-        margin: 0;
+        margin: 0 auto;
         background-position: 5em 0%;
+        margin-top: 0.25em;
     }
 
     .battle-list p {
-        margin-top: 0;
+        margin: auto;
         margin-bottom: 0;
         padding-top: 0;
-        font-size: 1em;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+        font-size: clamp(.5625rem, 0.5625rem + 12 * (100vw - 400px) / 800, 0.80025rem);
         font-weight: 700;
         display: inline;
     }
@@ -111,7 +127,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 0.5em;
+        gap: 0.15em;
         margin-bottom: 1em;
     }
 
@@ -147,117 +163,145 @@
 <body>
     <main>
         <section id="battle14" class="card-group">
-            <h2 class="section-title"><a href="https://cssbattle.dev/battle/14">CSS Battle 14: ZIndex</a></h2>
+            <a href="https://cssbattle.dev/battle/14">
+                <h2 class="section-title">CSS Battle 14: ZIndex</h2>
+            </a>
             <ul class="battle-list">
                 <li>
-                    <img src="https://cssbattle.dev/targets/77.png" width="373" heigh="200">
-                    <a href="css_battle/battle14/target77_notes.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="2"></span>
-                            <p>#77: Notes</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/77.png" width="373" heigh="200">
+                        <a href="css_battle/battle14/target77_notes.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="2"></span>
+                                <p>#77: Notes</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
-                <li><img src="https://cssbattle.dev/targets/78.png" width="373" heigh="200">
-                    <a href="css_battle/battle14/target78_ukelele.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="3"></span>
-                            <p>#78: Ukelele</p>
-                        </div>
-                    </a>
+                <li>
+                    <div class="card"><img src="https://cssbattle.dev/targets/78.png" width="373" heigh="200">
+                        <a href="css_battle/battle14/target78_ukelele.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="3"></span>
+                                <p>#78: Ukelele</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
-                <li><img src="https://cssbattle.dev/targets/79.png" width="373" heigh="200">
-                    <a href="css_battle/battle14/target79_tambourine.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="2"></span>
-                            <p>#79: Tambourine</p>
-                        </div>
-                    </a>
+                <li>
+                    <div class="card"><img src="https://cssbattle.dev/targets/79.png" width="373" heigh="200">
+                        <a href="css_battle/battle14/target79_tambourine.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="2"></span>
+                                <p>#79: Tambourine</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
-                <li><img src="https://cssbattle.dev/targets/80.png" width="373" heigh="200">
-                    <a href="css_battle/battle14/target80_piano.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="3"></span>
-                            <p>#80: Piano</p>
-                        </div>
-                    </a>
+                <li>
+                    <div class="card"><img src="https://cssbattle.dev/targets/80.png" width="373" heigh="200">
+                        <a href="css_battle/battle14/target80_piano.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="3"></span>
+                                <p>#80: Piano</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
             </ul>
         </section>
         <section id="battle15" class="card-group">
-            <h2 class="section-title"><a href="https://cssbattle.dev/battle/15">CSS Battle 15: Filter</a></h2>
+            <a href="https://cssbattle.dev/battle/15">
+                <h2 class="section-title">CSS Battle 15: Filter</h2>
+            </a>
             <ul class="battle-list">
                 <li>
-                    <img src="https://cssbattle.dev/targets/81.png" width="373" heigh="200">
-                    <!-- <a href="css_battle/battle15/target81_odoo.html"> -->
-                    <div class="target-title">
-                        <span class="target-status-icon" data-target-status="0"></span>
-                        <p>#81: Odoo</p>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/81.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target81_odoo.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="0"></span>
+                                <p>#81: Odoo</p>
+                            </div>
+                        </a>
                     </div>
-                    <!-- </a> -->
                 </li>
                 <li>
-                    <img src="https://cssbattle.dev/targets/82.png" width="373" heigh="200">
-                    <a href="css_battle/battle15/target82_diamondcut.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="3"></span>
-                            <p>#82: Diamond Cut</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/82.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target82_diamondcut.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="3"></span>
+                                <p>#82: Diamond Cut</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
                 <li>
-                    <img src="https://cssbattle.dev/targets/83.png" width="373" heigh="200">
-                    <a href="css_battle/battle15/target83_supernova.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="3"></span>
-                            <p>#83: Supernova</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/83.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target83_supernova.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="3"></span>
+                                <p>#83: Supernova</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
                 <li>
-                    <img src="https://cssbattle.dev/targets/84.png" width="373" heigh="200">
-                    <a href="css_battle/battle15/target84_junction.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="1"></span>
-                            <p>#84: Junction</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/84.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target84_junction.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="1"></span>
+                                <p>#84: Junction</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
                 <li>
-                    <img src="https://cssbattle.dev/targets/85.png" width="373" heigh="200">
-                    <a href="css_battle/battle15/target85_pythagoras.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="3"></span>
-                            <p>#85: Pythagoras</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/85.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target85_pythagoras.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="3"></span>
+                                <p>#85: Pythagoras</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
                 <li>
-                    <img src="https://cssbattle.dev/targets/86.png" width="373" heigh="200">
-                    <a href="css_battle/battle15/target86_stairway.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="3"></span>
-                            <p>#86: Stairway</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/86.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target86_stairway.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="3"></span>
+                                <p>#86: Stairway</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
                 <li>
-                    <img src="https://cssbattle.dev/targets/87.png" width="373" heigh="200">
-                    <a href="css_battle/battle15/target87_buildingblocks.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="1"></span>
-                            <p>#87: Building Blocks</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/87.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target87_buildingblocks.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="1"></span>
+                                <p>#87: Building Blocks</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
                 <li>
-                    <img src="https://cssbattle.dev/targets/88.png" width="373" heigh="200">
-                    <a href="css_battle/battle15/target88_tightcorners.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="1"></span>
-                            <p>#88: Tight Corners</p>
-                        </div>
-                    </a>
+                    <div class="card">
+                        <img src="https://cssbattle.dev/targets/88.png" width="373" heigh="200">
+                        <a href="css_battle/battle15/target88_tightcorners.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="1"></span>
+                                <p>#88: Tight Corners</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
             </ul>
         </section>
@@ -265,29 +309,35 @@
             <h2 class="section-title">Individual Components</h2>
             <ul class="battle-list">
                 <li>
-                    <img src="components/button/button_hover_glowtrace/design/button_glowy_border_screenshot.png"
-                        width="373" heigh="200">
-                    <a href="components/button/button_hover_glowtrace/button_glowy_border.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="0"></span>
-                            <p>Button - Animated Glow on Hover</p>
-                        </div>
-                    </a>
+                    <div id="button-hover-glowtrace" class="card">
+                        <img src="components/button/button_hover_glowtrace/design/button_glowy_border_screenshot.png"
+                            width="373" heigh="200">
+                        <a href="components/button/button_hover_glowtrace/button_glowy_border.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="0"></span>
+                                <p>Button - Animated Glow on Hover</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
                 <li>
-                    <img src="components/button/button_neon_reflection/design/button_neon_reflection_screenshot.png"
-                        width="373" heigh="200">
-                    <a href="components/button/button_neon_reflection/button_neon_reflection.html">
-                        <div class="target-title">
-                            <span class="target-status-icon" data-target-status="0"></span>
-                            <p>Button - Neon Reflection</p>
-                        </div>
-                    </a>
+                    <div id="button-neon-reflection" class="card">
+                        <img src="components/button/button_neon_reflection/design/button_neon_reflection_screenshot.png"
+                            width="373" heigh="200">
+                        <a href="components/button/button_neon_reflection/button_neon_reflection.html">
+                            <div class="target-title">
+                                <span class="target-status-icon" data-target-status="0"></span>
+                                <p>Button - Neon Reflection</p>
+                            </div>
+                        </a>
+                    </div>
                 </li>
             </ul>
         </section>
         <section id="frontend-mentor" class="card-group">
-            <h2 class="section-title">Frontend Mentor Challenges</h2>
+            <a href="https://www.frontendmentor.io/">
+                <h2 class="section-title">Frontend Mentor Challenges</h2>
+            </a>
             <ul class="battle-list">
                 <li>
                     <div id="fm-qr-code-component" class="card">
