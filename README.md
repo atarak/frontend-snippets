@@ -6,3 +6,8 @@ CSS Battles hosts a series of challenges for developers to re-create small image
 
 - [x] [CSS Battle 14 - ZIndex](https://atarak.github.io/frontend_snippets/index.html#battle14)
 - [x] [CSS Battle 15 - Filter](https://atarak.github.io/frontend_snippets/index.html#battle15)
+
+## Individual Components
+Following various youtube tutorials or dribble inspirations, I've re-created individual web page components (buttons, grid layouts, section titles, etc).
+
+- [x] [Individual Components](https://atarak.github.io/frontend_snippets/index.html#components)
