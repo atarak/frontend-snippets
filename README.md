@@ -11,3 +11,8 @@ CSS Battles hosts a series of challenges for developers to re-create small image
 Following various youtube tutorials or dribble inspirations, I've re-created individual web page components (buttons, grid layouts, section titles, etc).
 
 - [x] [Individual Components](https://atarak.github.io/frontend_snippets/index.html#components)
+
+## Frontend Mentor Challenges
+Frontend Mentor provides a series of challenges for web developers to re-create web page components (product card previews, landing pages, forms, etc) that require HTML, CSS, and JS. Unlike CSS Battles, there is not an explicit scoring mechanism; the emphasis is on working through a project and soliciting feedback from the community. Once a developer has submitted their work for a challenge, he or she can view other developers' solutions and have discussions with others about how to improve. Check out the official site: https://www.frontendmentor.io/!
+
+- [x] [QR Code Component](https://atarak.github.io/frontend_snippets/index.html#fm-qr-code-component)
