@@ -23,16 +23,13 @@
         align-items: center;
         justify-content: center;
         color: var(--clr-primary-900);
+        background: white;
     }
 
     main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
         text-align: center;
         max-width: 600px;
-        background: var(--clr-bg-primary);
+        background: rgb(173, 182, 181);
         font-family: "Poppins", serif;
     }
 
@@ -41,9 +38,29 @@
         padding-bottom: 1em;
         margin: 0;
         margin-top: 1em;
-        background: linear-gradient(teal 10%, white 10% 90%, teal 90% 100%);
-        box-shadow: 0 0 10px 1px rgb(32, 32, 32);
+        font-size: 2em;
+        background: white;
+        /* background: linear-gradient(teal 10%, white 10% 90%, teal 90% 100%); */
+
+        /* background: linear-gradient(white 0em 2.9em, navy 2.9em 3em, teal 3em); */
+        /* background: linear-gradient(teal 20px, navy 20px 21px, white 21px 89px, navy 89px 90px, teal 90px 100px); */
+        box-shadow: 0px 4px 8px 0px rgb(170, 169, 169);
         font-family: "Montserrat";
+        position: relative;
+        width: 100%;
+    }
+
+    .section-title::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: radial-gradient(transparent 80%, rgb(66, 66, 66)); */
+        /* background: radial-gradient(transparent 80%, rgb(121, 120, 120)); */
+        /* background: blue; */
     }
 
     a {
@@ -63,11 +80,11 @@
     }
 
     .battle-list li {
-        border: 2px solid var(--clr-primary-900);
+        /* border: 2px solid var(--clr-primary-900); */
         border-radius: 20px;
         overflow: hidden;
         background: white;
-        box-shadow: 0 0 4px 1px rgb(32, 32, 32);
+        box-shadow: 0 0 4px 1px rgb(90, 90, 90);
         min-width: 120px;
     }
 
