@@ -116,3 +116,33 @@ img {
         opacity: 0;
     }
 }
+
+footer {
+    bottom: 0;
+    font-size: 0.75em;
+    color: whitesmoke;
+    margin-bottom: 0;
+}
+
+.attribution {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+}
+
+footer,
+.attribution a {
+    margin-top: 0;
+}
+
+.attribution a {
+    font-size: 1em;
+    color: plum;
+}
+
+.attribution img {
+    max-height: 1em;
+    max-width: 1em;
+    height: auto;
+    width: auto;
+}
