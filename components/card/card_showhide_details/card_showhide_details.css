@@ -164,6 +164,16 @@ img {
     border-radius: var(--br);
     transform: scale(0.2 0.9);
     opacity: 0;
+    overflow: hidden;
+}
+
+.background img {
+    opacity: 0.3;
+    clip-path: url(#wave2);
+    height: 30%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
 }
 
 .game:hover .front {
