@@ -194,7 +194,8 @@ img {
 
 .game:hover .game-name {
     animation: gameName 250ms forwards;
-    padding: 0.5em 0;
+    padding: 1em 0;
+    margin-bottom: 1em;
 }
 
 .game:hover .stats {
