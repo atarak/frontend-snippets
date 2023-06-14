@@ -9,10 +9,13 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    background: #262626;
+}
+
 .container {
     width: 100%;
-    height: 100vh;
-    background: #262626;
+    height: 95vh;
     display: grid;
     place-items: center;
 }
@@ -227,4 +230,34 @@ html {
 .price span:last-child {
     font-weight: bold;
 
+}
+
+footer {
+    bottom: 0;
+    font-size: 1.1em;
+    color: whitesmoke;
+    margin-bottom: 0;
+}
+
+.attribution {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+}
+
+footer,
+.attribution a {
+    margin-top: 0;
+}
+
+.attribution a {
+    font-size: 1em;
+    color: plum;
+}
+
+.attribution img {
+    max-height: 1em;
+    max-width: 1em;
+    height: auto;
+    width: auto;
 }
