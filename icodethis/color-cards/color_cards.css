@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    background: #2c2446;
+    color: white;
+    font-family: system-ui;
+}
+
+main {
+    display: grid;
+    height: 95dvh;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    background: #302441;
+    display: grid;
+    place-content: center;
+    height: 75%;
+    width: 95dvw;
+    overflow: hidden;
+    position: relative;
+}
+
+.card {
+    max-width: 650px;
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 5px 5px 10px 15px rgba(22, 16, 29, 0.25);
+}
+
+.panel {
+    max-height: 35dvh;
+    max-width: 35dvw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    font-size: 1em;
+    padding: 1.75em;
+}
+
+.panel:nth-child(1) {
+    background: #8d7dfe;
+}
+
+.panel:nth-child(2) {
+    background: #c67aff;
+}
+
+.panel:nth-child(3) {
+    background: #ff73bc;
+}
+
+.panel .subtitle {
+    font-weight: 900;
+    opacity: 0.35;
+    font-size: 0.75em;
+    padding-top: 1em;
+}
+
+.panel .title {
+    font-weight: 700;
+}
+
+.panel .content {
+    font-size: 0.85em;
+    padding: 1em 0;
+}
+
+.panel .details {
+    padding: 1em 0;
+    text-decoration: none;
+    color: white;
+    font-size: 0.75em;
+}
