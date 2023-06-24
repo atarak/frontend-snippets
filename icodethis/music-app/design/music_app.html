@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="music_app.css">
 </head>
 
@@ -13,127 +15,156 @@
             <div class="card-main">
                 <div class="card-main title">Browse</div>
                 <div class="card-main nav">
-                    <ul class="nav-items">
-                        <li class="nav-item">New Music</li>
-                        <li class="nav-item">Playlists</li>
-                        <li class="nav-item">Top Charts</li>
-                    </ul>
+                    <div class="card-main header nav-items">
+                        <div class="nav-item">New Music</div>
+                        <div class="nav-item">Playlists</div>
+                        <div class="nav-item">Top Charts</div>
+                    </div>
                 </div>
-                <div class="card-main albums">
-                    <ul class="album-list">
-                        <li class="album-preview">
+                <div class="album-container" id="scroller">
+                    <div class="card-main albums">
+                        <div class="album-preview" id="group-1">
                             <div class="album-title">Queen</div>
                             <div class="album-artist">Nicki Minaj</div>
                             <div class="album-tag">New Album</div>
                             <div class="album-img"><img
-                                    src="https://source.unsplash.com/random/900×700/?retro&orientation=landscape&sig=1"
-                                    alt=""></div>
-                        </li>
-                        <li class="album-preview">
-                            <div class="album-title">Something</div>
+                                    src="https://source.unsplash.com/random/900×700/?query=landscape&orientation=landscape&sig=1"
+                                    alt="">
+                            </div>
+                            <div class="nextdiv">
+                                <a class="next" href="#group-2" aria-label="next">
+                                    <svg>
+                                        <use href="#next"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="album-preview" id="group-2">
+                            <div class="album-title">Sorry Not Sorry</div>
                             <div class="album-artist">Ariana Grande</div>
-                            <div class="album-tag">New Album</div>
                             <div class="album-img"><img
-                                    src="https://source.unsplash.com/random/900×700/?retro&&orientation=landscape&sig=2"
-                                    alt=""></div>
-                        </li>
-                    </ul>
+                                    src="https://source.unsplash.com/random/900×700/?query=landscape&orientation=landscape/1"
+                                    alt="">
+                            </div>
+                            <div class="nextdiv prevdiv">
+                                <a class="next" href="#group-1" aria-label="previous">
+                                    <svg>
+                                        <use href="#previous"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="album-tag">New Album</div>
+                        </div>
+                    </div>
+                    <!-- <div class="navigation-indicators">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div> -->
                 </div>
                 <div class="card-main songs">
-                    <div class="title">Hot songs</div>
-                    <ul class="song-list">
-                        <li class="song">
+                    <div class="subtitle">Hot songs</div>
+                    <div class="song-list">
+                        <div class="song">
+                            <!-- <div class="song-details"> -->
+                            <div class="artist-img"><img
+                                    src="https://source.unsplash.com/random/900×700/?headshot&sig=1" alt=""></div>
                             <div class="song-details">
-                                <div class="artist-img"><img
-                                        src="https://source.unsplash.com/random/900×700/?headshot&sig=1" alt=""></div>
-                                <div class="song-name">God's Plan</div>
-                                <div class="artist-name">Drake</div>
+                                <p class="song-name">God's Plan</p>
+                                <p class="artist-name">Drake</p>
                             </div>
-                            <div class="song-select"><a href="#"></a>+</div>
-                        </li>
-                        <li class="song">
+                            <div class="song-select"><a href="#">+</a></div>
+                        </div>
+                        <div class="song">
+                            <!-- <div class="song-details"> -->
+                            <div class="artist-img"><img
+                                    src="https://source.unsplash.com/random/900×700/?headshot&sig=2" alt=""></div>
                             <div class="song-details">
-                                <div class="artist-img"><img
-                                        src="https://source.unsplash.com/random/900×700/?headshot&sig=2" alt=""></div>
-                                <div class="song-name">I Like It</div>
-                                <div class="artist-name">Cardi B</div>
+                                <p class="song-name">I Like It</p>
+                                <p class="artist-name">Cardi B</p>
                             </div>
-                            <div class="song-select"><a href="#"></a>+</div>
-                        </li>
-                        <li class="song">
+                            <div class="song-select"><a href="#">+</a></div>
+                        </div>
+                        <div class="song">
+                            <!-- <div class="song-details"> -->
+                            <div class="artist-img"><img
+                                    src="https://source.unsplash.com/random/900×700/?headshot&sig=3" alt="">
+                            </div>
                             <div class="song-details">
-                                <div class="artist-img"><img
-                                        src="https://source.unsplash.com/random/900×700/?headshot&sig=3" alt=""></div>
-                                <div class="song-name">In The Morning</div>
-                                <div class="artist-name">ZHU</div>
+                                <p class="song-name">In The Morning
+                                <p class="artist-name">ZHU
                             </div>
-                            <div class="song-select"><a href="#"></a>+</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-main playing">
-                    <div class="current-song">
-                        <ul class="song-list">
-                            <li class="song">
-                                <div class="song-details">
-                                    <div class="artist-img"><img
-                                            src="https://source.unsplash.com/random/900×700/?headshot&sig=1" alt="">
-                                    </div>
-                                    <div class="song-name">God's Plan</div>
-                                    <div class="artist-name">Drake</div>
-                                </div>
-                                <div class="song-select"><a href="#"></a>+</div>
-                            </li>
-                            <li class="song">
-                                <div class="song-details">
-                                    <div class="artist-img"><img
-                                            src="https://source.unsplash.com/random/900×700/?headshot&sig=2" alt="">
-                                    </div>
-                                    <div class="song-name">I Like It</div>
-                                    <div class="artist-name">Cardi B</div>
-                                </div>
-                                <div class="song-select"><a href="#"></a>+</div>
-                            </li>
-                            <li class="song song--active">
-                                <div class="song-details">
-                                    <div class="artist-img"><img
-                                            src="https://source.unsplash.com/random/900×700/?headshot&sig=3" alt="">
-                                    </div>
-                                    <div class="song-name">In The Morning</div>
-                                    <div class="artist-name">ZHU</div>
-                                </div>
-                                <div class="song-select"><a href="#"></a>+</div>
-                            </li>
-                        </ul>
+                            <div class="song-select"><a href="#">+</a></div>
+                        </div>
+                        <div class="song">
+                            <!-- <div class="song-details"> -->
+                            <div class="artist-img"><img
+                                    src="https://source.unsplash.com/random/900×700/?headshot&sig=4" alt="">
+                            </div>
+                            <div class="song-details">
+                                <p class="song-name">In The Morning
+                                <p class="artist-name">ZHU
+                            </div>
+                            <div class="song-select"><a href="#">+</a></div>
+                        </div>
                     </div>
-                    <div class="controls">
-                        <span class="pause"></span>
-                        <span class="play"></span>
+
+                </div>
+            </div>
+            <div class="card-main playing">
+                <div class="song-img">
+                    <div class="artist-img icon"><img src="https://source.unsplash.com/random/900×700/?headshot&sig=3"
+                            alt="">
                     </div>
                 </div>
-                <div class="card-main primary-nav">
-                    <ul class="nav-items">
-                        <li class="nav-item">
-                            <span class="icon"></span>
-                            <p class="name">Home</p>
-                        </li>
-                        <li class="nav-item">
-                            <span class="icon"></span>
-                            <p class="name">Trending</p>
-                        </li>
-                        <li class="nav-item">
-                            <span class="icon"></span>
-                            <p class="name">Search</p>
-                        </li>
-                        <li class="nav-item">
-                            <span class="icon"></span>
-                            <p class="name">Library</p>
-                        </li>
-                    </ul>
+                <div class="song-details">
+                    <p class="song-name">In The Morning</p>
+                    <p class="artist-name">ZHU</p>
+                </div>
+                <div class="controls">
+                    <span class="pause">
+                        <i class="fa fa-pause"></i>
+                    </span>
+                    <span class="play">
+                        <i class="fa fa-play"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="card-main primary-nav">
+                <div class="nav-items footer-menu">
+                    <div class="nav-item">
+                        <i class="fas fa-home"></i>
+                        <p class="name">Home</p>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-fire"></i>
+                        <p class="name">Trending</p>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-binoculars"></i>
+                        <p class="name">Search</p>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-book"></i>
+                        <p class="name">Library</p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <svg>
+        <symbol id="next" viewBox="0 0 256 512" width="10px">
+            <path fill="white"
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+        </symbol>
+
+        <symbol id="previous" viewBox="0 0 256 512" width="10px">
+            <path fill="white"
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+        </symbol>
+    </svg>
 </body>
 
 </html>

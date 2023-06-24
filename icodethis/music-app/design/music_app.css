@@ -34,7 +34,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid limegreen;
     row-gap: 0;
 }
 
@@ -43,7 +42,7 @@ img {
     max-height: 100%;
 }
 
-.artist-img {
+.artist-img img {
     aspect-ratio: 1;
     object-fit: cover;
     height: 5em;
@@ -59,71 +58,319 @@ li {
     display: inline;
 }
 
+/* .card-main.nav {
+    margin: 0.25em;
+} */
+
+/* .card-main.nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 3.1em;
+    margin: 0;
+} */
+.card-main.nav {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    place-content: center;
+}
+
+.card-main.header {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2em;
+    position: relative;
+}
+
+.card-main.header::before {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 2px;
+    background: var(--clr-secondary);
+    bottom: -5px;
+}
+
+.card-main.nav .nav-items {
+    opacity: 0.75;
+    font-size: 0.75em;
+}
+
+.card-main.nav .nav-item:nth-of-type(1) {
+    opacity: 1;
+    font-weight: 900;
+}
+
 .card {
+    max-width: 300px;
     width: 50%;
-    height: 80%;
+    height: 90%;
     background: var(--clr-bg-card);
-    border: 3px solid purple;
+}
+
+.card-main {
+    position: relative;
 }
 
 .card-main .title {
     font-weight: 700;
-    padding: 1em;
+    padding: 0.75em 0.5em;
     font-size: 1.2em;
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
     margin: 0;
 }
 
-.card-main .nav-items {
-    border: 3px solid red;
+
+.album-container {
+    position: relative;
 }
 
-.card-main .albums {
-    width: 100%;
-    max-height: 180px;
-    overflow-y: scroll;
-    /* overflow-x: scroll; */
-}
-
-.album-list {
-    list-style-type: none;
+.card-main.albums {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    grid-auto-columns: 100%;
+    padding: 1rem;
+    margin: 0 1em;
+    /* scroll-padding-inline: 3rem; */
 }
 
 .album-preview {
-    display: inline-grid;
-    grid-template-rows: 1fr 1fr 3fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        "a a b"
-        "c c c"
-        "e e e";
-    row-gap: 0;
-    padding: 0;
-    grid-auto-flow: column;
+    font-size: 0.85em;
+    display: grid;
+    grid-template-rows: 1fr 1fr 5fr;
+    grid-template-columns: 3fr 1fr 2fr 1fr;
+    height: 12em;
+    overflow-y: hidden;
+    grid-template-areas: "a" "b" "c" "d";
+    overflow-x: hidden;
 }
 
 .album-preview .album-title {
-    grid-area: a;
+    grid-area: 1 / 1 / 2 / 1;
+    font-size: 0.75em;
+    font-weight: 700;
 }
 
 .album-preview .album-tag {
-    grid-area: b;
+    grid-area: 1 / 3 / 2 / 4;
+    font-size: 0.6em;
+    text-align: center;
+    border: 1px solid var(--clr-primary);
+    border-radius: 0.5em;
 }
 
 .album-preview .album-artist {
-    grid-area: c;
+    grid-area: 2 / 1 / 3 / 1;
+    opacity: 0.75;
 }
 
-.album-review .album-img {
-    grid-area: e;
-    aspect-ratio: none;
-    border-radius: .25em;
-    max-width: 100%;
-    max-height: 50%;
+.album-img {
+    grid-area: 3 / 1 / 4 / 4;
+    padding: 0.25em;
+}
+
+.album-img img {
+    height: 80%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.25em;
     object-fit: cover;
+    overflow: hidden;
 }
 
-/* <div class="album-title">Queen</div>
-                        <div class="album-artist">Nicki Minaj</div>
-                        <div class="album-tag">New Album</div>
-                        <div class="album-img"><img src="https://source.unsplash.com/random/900×700/?retro" alt=""></div></li> */
+.nextdiv {
+    grid-area: 3 / 4;
+    z-index: 10;
+    background: blue;
+    width: 50px;
+    height: 100%;
+    opacity: 0;
+}
+
+.prevdiv {
+    grid-area: 3 / 1;
+    z-index: 10;
+    width: 50px;
+    background: red;
+    height: 100%;
+    opacity: 0;
+}
+
+.nextdiv:hover,
+.prevdiv:hover {
+    opacity: 0.75;
+    transition: opacity 500ms;
+}
+
+.navigation-indicators {
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    gap: 3px;
+
+    top: -1rem;
+    right: 2rem;
+}
+
+svg {
+    z-index: 10;
+}
+
+.navigation-indicators>* {
+    width: 1rem;
+    height: 2px;
+    background: white;
+    opacity: 0.5;
+}
+
+.albums:has(.album-preview:target) .navigation-indicators>*:nth-child(1) {
+    opacity: 0.5;
+}
+
+.navigation-indicators>*:nth-child(1),
+.albums:nth-child(1):target~.navigation-indicators>*:nth-child(1) {
+    opacity: 1;
+}
+
+.albums:hover .navigation-indicators {
+    opacity: 1;
+}
+
+.song-list {
+    width: 80%;
+    padding: 0 2em;
+}
+
+.song-list>* {
+    font-size: 1eem;
+    /* font-size: 0.5em; */
+}
+
+.song {
+    display: grid;
+    grid-template-columns: 2fr 5fr 1fr;
+    align-items: center;
+    column-gap: 0.5em;
+    padding: 0.45em 0;
+}
+
+.artist-img img {
+    grid-area: 1 / 1 / 2 / 1;
+    font-size: 1em;
+}
+
+.song-details {
+    grid-area: 1 / 2 / 2 / 2;
+}
+
+.song-details p {
+    margin: 0;
+    font-size: 0.5em;
+}
+
+.icon {
+    position: relative;
+}
+
+.song-details .song-name {
+    font-weight: 700;
+}
+
+.song-details .artist-name {
+    font-size: 0.25em;
+}
+
+.song .icon,
+.song img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.song-select a {
+    color: var(--clr-primary);
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    padding: 0.25em;
+    font-size: 1.5em;
+}
+
+.song-select:hover {
+    /* border: 1px solid red; */
+    /* border-radius: 50%; */
+    /* font-size: 2em; */
+    transform: scale(1.5);
+}
+
+.song:has(.song-select:hover) {
+    border: 1px solid rgba(166, 203, 246, 0.5);
+    border-radius: 0.5em;
+}
+
+.subtitle {
+    padding: 0 0.75em;
+    padding-bottom: 0.25em;
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+.playing {
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    font-size: 0.5em;
+    padding: 1em 3em;
+    background: var(--clr-bg-main);
+}
+
+.playing::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, var(--clr-primary) 20%, 20%, var(--clr-secondary));
+    width: 100%;
+    height: 3px;
+}
+
+.playing p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.playing i {
+    font-size: 1.2em;
+    padding: 0 0.5em;
+}
+
+.current-song {
+    background: var(--clr-bg-main);
+}
+
+.controls {
+    padding: 1em 0;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
+    /* padding: 1em; */
+}
+
+.footer-menu .nav-item {
+    display: inline;
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+.footer-menu .nav-item:nth-of-type(3)>* {
+    color: var(--clr-primary);
+}
+
+.footer-menu p {
+    margin: 0;
+    font-size: 0.5em;
+}
