@@ -16,14 +16,29 @@
                 <div class="card-main title">Browse</div>
                 <div class="card-main nav">
                     <div class="card-main header nav-items">
-                        <div class="nav-item">New Music</div>
-                        <div class="nav-item">Playlists</div>
-                        <div class="nav-item">Top Charts</div>
+                        <div class="nav-item">
+                            <input type="radio" id="control_01" name="select" value="1">
+                            <label for="control_01">
+                                <p>New Music</p>
+                            </label>
+                        </div>
+                        <div class="nav-item">
+                            <input type="radio" id="control_02" name="select" value="2">
+                            <label for="control_02">
+                                <p>Playlists</p>
+                            </label>
+                        </div>
+                        <div class="nav-item">
+                            <input type="radio" id="control_03" name="select" value="3">
+                            <label for="control_03">
+                                <p>Top Charts</p>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="album-container" id="scroller">
                     <div class="card-main albums">
-                        <div class="album-preview" id="group-1">
+                        <div class="album-preview new-album" id="group-1">
                             <div class="album-title">Queen</div>
                             <div class="album-artist">Nicki Minaj</div>
                             <div class="album-tag">New Album</div>
@@ -40,7 +55,7 @@
                             </div>
                         </div>
 
-                        <div class="album-preview" id="group-2">
+                        <div class="album-preview new-album" id="group-2">
                             <div class="album-title">Sorry Not Sorry</div>
                             <div class="album-artist">Ariana Grande</div>
                             <div class="album-img"><img
@@ -55,6 +70,30 @@
                                 </a>
                             </div>
                             <div class="album-tag">New Album</div>
+                            <div class="nextdiv">
+                                <a class="next" href="#group-3" aria-label="next">
+                                    <svg>
+                                        <use href="#next"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="album-preview top-album" id="group-3">
+                            <div class="album-title">Third Album</div>
+                            <div class="album-artist">Big Wig</div>
+                            <div class="album-img"><img
+                                    src="https://source.unsplash.com/random/900×700/?query=landscape&orientation=landscape/3"
+                                    alt="">
+                            </div>
+                            <div class="prevdiv">
+                                <a class="next" href="#group-2" aria-label="previous">
+                                    <svg>
+                                        <use href="#previous"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="album-tag">Top 100</div>
                         </div>
                     </div>
                     <!-- <div class="navigation-indicators">

@@ -5,6 +5,9 @@
     --clr-bg-purple: #2c2446;
     --clr-bg-main: #13171e;
     --clr-bg-card: #1a1f28;
+
+    --new-album-display: grid;
+    --top-album-display: grid;
 }
 
 *,
@@ -58,16 +61,59 @@ li {
     display: inline;
 }
 
-/* .card-main.nav {
-    margin: 0.25em;
-} */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
 
-/* .card-main.nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 3.1em;
-    margin: 0;
-} */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]~label {
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+label:hover {
+    color: white;
+}
+
+input[type="radio"]:checked+label {
+    border-bottom: 2px solid var(--clr-secondary);
+}
+
+
+:root:has(#control_01:checked) {
+    --new-album-display: grid;
+    --top-album-display: none;
+    border: 3px solid orange;
+}
+
+:root:has(#control_03:checked) {
+    --new-album-display: none;
+    --top-album-display: grid;
+    border: 3px solid pink;
+}
+
+.new-album {
+    display: var(--new-album-display);
+}
+
+.top-album {
+    display: var(--top-album-display);
+}
+
 .card-main.nav {
     margin-left: auto;
     margin-right: auto;
@@ -82,6 +128,7 @@ li {
     position: relative;
 }
 
+/* 
 .card-main.header::before {
     content: "";
     position: absolute;
@@ -89,17 +136,17 @@ li {
     height: 2px;
     background: var(--clr-secondary);
     bottom: -5px;
-}
+} */
 
 .card-main.nav .nav-items {
     opacity: 0.75;
     font-size: 0.75em;
 }
 
-.card-main.nav .nav-item:nth-of-type(1) {
+/* .card-main.nav .nav-item:nth-of-type(1) {
     opacity: 1;
     font-weight: 900;
-}
+} */
 
 .card {
     max-width: 300px;
@@ -139,7 +186,7 @@ li {
 
 .album-preview {
     font-size: 0.85em;
-    display: grid;
+    /* display: grid; */
     grid-template-rows: 1fr 1fr 5fr;
     grid-template-columns: 3fr 1fr 2fr 1fr;
     height: 12em;
@@ -173,7 +220,7 @@ li {
 }
 
 .album-img img {
-    height: 80%;
+    height: 100%;
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 0.25em;
@@ -199,8 +246,10 @@ li {
     opacity: 0;
 }
 
-.nextdiv:hover,
-.prevdiv:hover {
+.album-preview:nth-of-type(1) .nextdiv:hover,
+.album-preview:nth-of-type(2) .prevdiv:hover,
+.album-preview:nth-of-type(2) .nextdiv:hover,
+.album-preview:nth-of-type(3) .prevdiv:hover {
     opacity: 0.75;
     transition: opacity 500ms;
 }
