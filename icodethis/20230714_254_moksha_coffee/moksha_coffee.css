@@ -1,0 +1,233 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(32, 32, 32);
+    font-family: "Victor Mono", serif;
+    color: white;
+}
+
+
+main {
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+    z-index: -10;
+    isolation: isolate;
+}
+
+.wrapper {
+    width: 500px;
+    min-height: 400px;
+    height: 100%;
+
+    background: url("https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3456&q=80"),
+        rgba(49, 49, 49, 0.8);
+    filter: sepia(30%) grayscale(30%);
+
+    background-size: 900px;
+    background-position: -150px 0;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    position: relative;
+    z-index: -1;
+
+    box-shadow: 10px 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: grid;
+    column-gap: 1em;
+    background: transparent;
+    position: relative;
+    isolation: isolate;
+    color: white;
+    z-index: 1;
+    font-size: 0.65em;
+}
+
+.header-nav:hover {
+    text-decoration: 2px underline solid white;
+    text-underline-offset: 0.5em;
+    font-weight: bold;
+    transition: text-decoration 200ms ease-in;
+    color: white;
+}
+
+.row:first-of-type {
+    background: linear-gradient(rgb(49, 49, 49) 0% 70%, transparent 70% 100%);
+    padding: 0 1.5em;
+}
+
+#main-nav {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 2fr 2fr 1fr 2fr;
+    grid-template-rows: 9fr 1fr;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: relative;
+    color: rgb(247, 244, 244);
+}
+
+#main-nav>.header-nav {
+    padding: 0.2em 0;
+    grid-row: 1 / 1;
+}
+
+#main-nav>.logo-swirl {
+    padding: 0.2em 0;
+    margin: auto;
+    grid-row: 1 / 1;
+    opacity: 0.25;
+}
+
+#swirl>g {
+    fill: currentColor;
+}
+
+#main-nav>#logo-btn {
+    grid-row: 1/ -1;
+    padding: 3em 0;
+    padding-top: 1em;
+    overflow-y: visible;
+    background: rgb(247, 244, 244);
+    color: black;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.5em;
+    font-family: "Orbitron", serif;
+    font-weight: 800;
+}
+
+#logo-btn>.logo-swirl {
+    zoom: 120%;
+}
+
+#main-logo {
+    position: relative;
+}
+
+svg {
+    display: inline;
+}
+
+span {
+    margin: 0;
+    padding: 0;
+}
+
+svg.logo-swirl {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+
+#logo-btn>span {
+    margin: -0.25em;
+}
+
+.logo {
+    width: 100px;
+    height: 20px;
+}
+
+#main-logo {
+    width: 100px;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+button.cta {
+    margin: 2em;
+    padding: 0.5em 1.75em;
+    border: 3px solid white;
+    font-size: 0.75em;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+button.cta::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: rgb(119, 101, 68);
+    z-index: -1;
+}
+
+button.cta:hover::after {
+    transform: translateX(100%);
+    transition: transform 250ms ease-in;
+}
+
+
+img {
+    max-width: 100%;
+    aspect-ratio: 6/9;
+}
+
+h1 {
+    font-family: "Caprasimo";
+    text-transform: uppercase;
+    padding: 2em;
+    font-size: 1.5em;
+}
+
+p {
+    padding: 0 4.75em;
+    font-size: 0.75em;
+}
+
+.gallery {
+    margin: 1em 0;
+    padding: 2.5em 0;
+    background: rgb(49, 49, 49);
+    overflow: hidden;
+}
+
+.gallery>p {
+    padding: 2.5em 2em;
+    font-weight: 600;
+    font-size: 0.65em;
+}
+
+.scrolling-images {
+    display: flex;
+    overflow-x: none;
+    column-gap: 0.5em;
+    width: 100%;
+    justify-content: center;
+}
+
+button {
+    cursor: pointer;
+    z-index: 100;
+}
+
+button>img {
+    aspect-ratio: 9 / 6;
+    height: 4em;
+    cursor: pointer;
+}
+
+button:hover:has(img) {
+    transform: scale(1.5);
+    z-index: 1000;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 200ms;
+}
