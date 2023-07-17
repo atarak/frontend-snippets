@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-bg-purple: #2c2446;
+    --clr-bg-main: #eaf1ff;
+    --clr-text: #a3b5f7;
+    --clr-bg-card: #3457dc;
+    --clr-bg-success: #5878f2;
+    --clr-bg-error: #e9657b;
+}
+
+html {
+    background: var(--clr-bg-purple);
+    color: rgb(210, 213, 228);
+}
+
+body {
+    display: grid;
+    height: 100dvh;
+    place-content: center;
+    font-family: system-ui;
+}
+
+main {
+    background: var(--clr-bg-main);
+    height: 80dvh;
+    max-width: 1000px;
+    width: 95dvw;
+
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    position: relative;
+    background: var(--clr-bg-card);
+    border-radius: 0.35em;
+    height: 40dvh;
+    width: 60dvh;
+    box-shadow: 0 10px 10px 0 rgba(52, 87, 220, 0.2),
+        -10px -10px 10px 0 rgba(52, 87, 220, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3em;
+    row-gap: 1.25em;
+}
+
+.notification {
+    font-size: 0.6em;
+    font-weight: 500;
+    width: 80%;
+    padding: 0.5em;
+    padding-left: 1.5em;
+    background: var(--clr-bg-success);
+    border-radius: 0.25em;
+    position: relative;
+}
+
+.notification::after {
+    content: "x";
+    position: absolute;
+    right: .5em;
+    opacity: 0.5;
+    font-size: 1.1em;
+}
+
+.error-process {
+    background: var(--clr-bg-error);
+}
+
+.error-process::before {
+    content: "Try again";
+    position: absolute;
+    right: 2em;
+    opacity: 0.75;
+}
+
+i {
+    margin: 0;
+    padding: 0;
+    padding-right: 1em;
+}
