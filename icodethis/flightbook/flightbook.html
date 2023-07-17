@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="card">
+                <div class="card-header">
+                    <span><i class="fa fa-plane"></i></span>
+                    <div class="card-header-summary">
+                        <p class="from-city">Bucharest</p>|<p class="from-airport">OTP</p>
+                        <span><i class="fa fa-arrow-right"></i></span>
+                        <p class="to-city">Tenerife (Canary Islands)</p>|
+                        <p class="to-airport">TFS</p>
+                    </div>
+                </div>
+                <div class="card-banner">
+                    <!-- <div class="banner-scroll-wrapper"> -->
+                    <div class="banner-scroll-nav">
+                        <button class="btn-scroll-nav prev"><span><i class="fa fa-chevron-left"></i></span></button>
+                    </div>
+                    <div class="banner-box-list">
+                        <button class="banner-box-item" id="box1">
+                            <span class="banner-box-header">Tue 30, Apr</span>
+                            <span class="banner-box-content">
+                                <span class="status" data-flightcount="0">No flights</span>
+                                <span class="price"></span>
+                            </span>
+                        </button>
+                        <button class="banner-box-item" id="box2">
+                            <span class="banner-box-header">Wed 01, May</span>
+                            <span class="banner-box-content">
+                                <span class="status" data-flightcount="0">No flights</span>
+                                <span class="price"></span>
+                            </span>
+                        </button>
+                        <button class="banner-box-item" id="box3">
+                            <span class="banner-box-header">Thu 02, May</span>
+                            <span class="banner-box-content">
+                                <span class="status" data-flightcount="1">From</span>
+                                <span class="price">$264</span>
+                            </span>
+                        </button>
+                        <button class="banner-box-item" id="box4">
+                            <span class="banner-box-header">Fri 03, May</span>
+                            <span class="banner-box-content">
+                                <span class="status" data-flightcount="0">No flights</span>
+                                <span class="price"></span>
+                            </span>
+                        </button>
+                        <button class="banner-box-item" id="box4">
+                            <span class="banner-box-header">Sat 04, May</span>
+                            <span class="banner-box-content">
+                                <span class="status" data-flightcount="2">From</span>
+                                <span class="price">$254</span>
+                            </span>
+                        </button>
+                        <button class="banner-box-item" id="box5">
+                            <span class="banner-box-header">Sun 05, May</span>
+                            <span class="banner-box-content">
+                                <span class="status" data-flightcount="0">No flights</span>
+                                <span class="price"></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="banner-scroll-nav">
+                        <button class="btn-scroll-nav next"><span><i class="fa fa-chevron-right"></i></span></button>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="card-summary">
+                    <div class="card-summary-from">
+                        <div class="from-date summary-date" id="summary-selected-from-date">Thu 02, May 2019</div>
+                        <div class="from-time summary-time">13:40</div>
+                        <div class="from-city summary-city">Bucharest</div>
+                    </div>
+                    <div class="card-summary-travel-time"><span id="travel-time">6h 15m</span></div>
+                    <div class="card-summary-to">
+                        <div class="to-date summary-date" id="summary-selected-to-date">Thu 02, May 2019</div>
+                        <div class="to-time summary-time">17:55</div>
+                        <div class="to-city summary-city">Tenerife (Canary Islands)</div>
+                    </div>
+                </div>
+                <div class="card-cta">
+                    <button>Select Bundle</button>
+                </div>
+                <div class="card-complete hide" id="card-complete">
+                    <p class="success"><span><i class="fa fa-check"></i></span>Link sent!</p>
+                    <p>Please check your mobile device.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

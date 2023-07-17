@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="todolist.js"></script>
+    <link rel="stylesheet" href="todolist.css">
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="card" id="card-user-login">
+                <div class="login-header">
+                    <button class="change-acct">
+                        <span class="button-label">Change Account</span>
+                        <span class="dropdown-showhide" id="acct-dropwdown-icon"><i
+                                class="fa fa-chevron-down"></i></span>
+                    </button>
+                </div>
+                <div class="user-avatar">
+                    <img src="https://source.unsplash.com/random/900×700/?headshot&sig=1" alt="">
+                </div>
+                <div class="welcome-user">
+                    <span class="welcome">Welcome back,</span>
+                    <span class="user-name">Arya</span>
+                </div>
+                <div class="user-login">
+                    <span class="input-field">
+                        <input type="text" name="password" id="enter-password" required pattern="/().*){4,}/"
+                            placeholder="Enter your password">
+                    </span>
+                    <span class="input-submit">
+                        <button class="cta" id="loginBtn">
+                            Log In
+                        </button>
+                    </span>
+                </div>
+                <div class="login-footer">
+                    <button id="forgot-password">Unable to login?</button>
+                </div>
+            </div>
+            <div class="card hide" id="card-user-lists">
+                <div class="addnew" id="addnew">
+                    <button id="addNewListBtn"><span><i class="fa fa-plus"></i></span>Add New List</button>
+                </div>
+            </div>
+            <div class="card hide" id="card-user-list">
+                <div id="user-itemized-list">
+                    <div class="list-header">
+                        <button id="back-btn"><span><i class="fa fa-arrow-left"></i></span></button>
+                        <input type="text" name="newlist" id="listname-header" placeholder="Enter new list name"
+                            required class="listname" data-listindex="0">
+                        <!-- <span class="listname" id="listname-header"></span> -->
+                    </div>
+                    <div class="listitems" id="listitems"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <template id="tpl-profile">
+        <div user-wrapper>
+            <img src="https://i.pravatar.cc/150?img=11">
+            <div class="">
+                <p user-name>name</p>
+            </div>
+            <button btn-login type="button">forum</button>
+        </div>
+    
+    </template> -->
+    <template id="tpl-listsummary">
+        <div class="user-lists-header">
+            <div class="user-avatar">
+                <img src="https://source.unsplash.com/random/900×700/?headshot&sig=1" alt="">
+                <span user-name class="user-name" id="listsumm-user">Arya</span>
+            </div>
+            <div class="card-action"><button id="exit-user-lists" class="card-exit"></button></div>
+        </div>
+        <div listwrapper>
+            <div id="search-lists">
+                <span class="input-field">
+                    <input type="text" name="filter" id="filter-lists" onkeyup="filterFunction()">
+                </span>
+                <span class="search"><i class='fa-solid fa-magnifying-glass'></i></span>
+            </div>
+            <div class="lists"></div>
+        </div>
+    </template>
+
+    <template id="tpl-listdesc">
+        <div class="listsummary">
+            <p data-listname class="listname" data-listindex="0">name</p>
+            <!-- <span data-listtotal data-listincomplete data-listtotal class="listprogress">numComplete</span> -->
+            <div class="skill">
+                <div class="outer">
+                    <div class="inner">
+                        <div class="number">x%</div>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#DA22FF" />
+                            <stop offset="100%" stop-color="#9733EE" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+    </template>
+    <template id="tpl-listitem">
+        <div class="item">
+            <span class="itemname"></span>
+            <span class="itemstatus"><input type="checkbox" name="item-status"></span>
+        </div>
+    </template>
+
+</body>
+
+</html>

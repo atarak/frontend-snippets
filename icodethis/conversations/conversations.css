@@ -1,0 +1,462 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+}
+
+:root {
+    --clr-bg: #dae3eb;
+    --clr-primary: hotpink;
+    --clr-secondary: #3498db;
+    --card-height: 350px;
+    --gap-std: 2em;
+    --scroll-bar-color: #c5c5c5;
+    --scroll-bar-bg-color: #f6f6f6;
+}
+
+body {
+    background: #dae3eb;
+    font-family: system-ui;
+}
+
+img {
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+header {
+    background: var(--clr-secondary);
+    position: relative;
+    color: white;
+    padding: 2em;
+    width: 100dvw;
+    height: 10dvh;
+    text-align: center;
+}
+
+
+button.show-hide-friends>span>i,
+button.show-message-alerts>span>i {
+    margin: 0 2em;
+    position: relative;
+    isolation: isolate;
+}
+
+button.show-hide-friends>span>i::after,
+button.show-message-alerts>span>i::after {
+    position: absolute;
+    content: "";
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 2em;
+    aspect-ratio: 1;
+    scroll-margin-left: 1em;
+    top: -0.5em;
+    left: -0.4em;
+    z-index: -1;
+}
+
+button.show-message-alerts>span>i::after {
+    left: -0.52em;
+}
+
+button.show-message-alerts:not([messageCount='0'])>span>i::after {
+    background: var(--clr-primary);
+}
+
+button.show-hide-friends:hover,
+button.show-message-alerts:hover {
+    position: relative;
+}
+
+button.show-hide-friends:hover::before {
+    content: "Show / Hide Contacts";
+    position: absolute;
+    width: 100%;
+    background: var(--clr-primary);
+    font-size: 0.5em;
+    bottom: -3.5em;
+}
+
+button.show-message-alerts:hover::before {
+    content: "Unread Messages";
+    position: absolute;
+    width: 100%;
+    background: var(--clr-primary);
+    font-size: 0.5em;
+    bottom: -3.5em;
+}
+
+main {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5em;
+    column-gap: var(--gap-std);
+    position: relative;
+    overflow: hidden;
+}
+
+main::before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(var(--clr-bg), transparent);
+    top: 0;
+    left: 0;
+    height: 35dvh;
+    width: 100dvw;
+    z-index: 11;
+    pointer-events: none;
+}
+
+main::after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(transparent, var(--clr-bg));
+    height: 35dvh;
+    width: 100%;
+    bottom: 0;
+    z-index: 11;
+    pointer-events: none;
+}
+
+.left-col {
+    min-width: 50px;
+    max-width: 300px;
+    max-height: 100%;
+    min-height: 100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding: 1.5em;
+}
+
+.user-cards {
+    display: grid;
+    grid-template-rows: repeat(autofit, 1fr);
+    row-gap: var(--gap-std);
+    position: relative;
+    width: 100%;
+    margin: 0 0.25em;
+    justify-content: center;
+}
+
+.user-card {
+    position: relative;
+    background: white;
+    height: var(--card-height);
+    /* width: 250px; */
+    /* width: 250%; */
+    /* width: calc(200% + 20px); */
+    width: 100%;
+    max-width: 12em;
+    border-radius: 0.5em;
+    overflow: hidden;
+    display: grid;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: -8px 2px 10px 10px rgba(136, 134, 134, 0.2);
+    padding: 0.5em 1.5em;
+    margin: auto;
+}
+
+.user-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.missed-message-count {
+    position: relative;
+    isolation: isolate;
+    color: white;
+    left: -15px;
+    top: -8px;
+    font-size: 0.75em;
+}
+
+.missed-message-count::before {
+    position: absolute;
+    content: "";
+    background: hotpink;
+    height: 3.5em;
+    width: 5.5em;
+    z-index: -1;
+    left: -45px;
+    top: -20px;
+    border-radius: 0.5em;
+}
+
+.expand {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+}
+
+.user-card-img img {
+    width: 200px;
+    border-radius: 0.25em;
+}
+
+.user-card-userinfo {
+    max-height: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-content: center;
+    font-size: 0.85em;
+    text-align: center;
+    color: rgb(44, 43, 43);
+}
+
+.user-name {
+    font-weight: bold;
+    display: inline;
+}
+
+.user-status {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: rgb(101, 175, 101);
+    border-radius: 50%;
+    margin: 0 0.25em;
+}
+
+.user-title {
+    font-size: 0.85em;
+}
+
+button.cta {
+    border-radius: 1.5em;
+    font-size: 0.75em;
+    margin: auto;
+    padding: 0.25em 1.25em;
+    color: #3498db;
+    border: 1px solid #3498db;
+    background-color: transparent;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.user-card>button {
+    width: 60%;
+    margin-bottom: 1em;
+}
+
+
+button.cta:hover {
+    background: #3498db;
+    color: white;
+}
+
+.right-col {
+    width: 40dvw;
+    min-width: 2em;
+    max-width: 600px;
+    max-height: 40dvh;
+    min-height: calc(var(--card-height)*1.5);
+}
+
+.conversation-card {
+    min-width: 10dvw;
+    max-width: 40dvw;
+    max-height: 100%;
+    background: #fafafa;
+    display: grid;
+    grid-template-rows: 1fr 7fr 3fr;
+    border-radius: 0.25em;
+    box-shadow: -8px 2px 10px 10px rgba(136, 134, 134, 0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.conversation-header {
+    width: 100%;
+    padding: 0.5em 0.5em;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.conversation-exit {
+    position: relative;
+}
+
+.conversation-exit::before {
+    position: absolute;
+    content: "\00d7";
+    font-size: 2em;
+    cursor: pointer;
+    right: -0.5ch;
+    top: -1.5ch;
+    background: rgba(134, 134, 134, 0.3);
+    padding: 0.25em 0.5em;
+    border-radius: 0 0.25em;
+    z-index: 100;
+}
+
+.em,
+.conversation-username {
+    font-weight: bold;
+}
+
+.conversation-content {
+    max-height: 60dvh;
+    /* display: flex; */
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-rows: repeat(autofit, 1fr);
+    row-gap: 1.5em;
+    align-items: flex-start;
+    padding: 0 1em;
+    position: relative;
+    overflow: auto;
+    bottom: 0;
+}
+
+.conversation-content::after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(#fafafa, 40%, transparent);
+    top: -1em;
+    height: 6em;
+    width: 100%;
+}
+
+.conversation-edit {
+    background: rgba(218, 227, 235, 0.25);
+}
+
+.sender {
+    text-align: right;
+}
+
+.sent-message,
+.received-message {
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+
+.sent-message {
+    background: var(--clr-secondary);
+    color: white;
+    hyphens: auto;
+    max-width: 20ch;
+    word-break: break-word;
+}
+
+.receiver {
+    text-align: left;
+}
+
+.received-message {
+    background: var(--clr-bg);
+    color: rgba(122, 119, 119, 0.9);
+}
+
+.status-update {
+    text-align: center;
+}
+
+.unread-message-status {
+    background: hotpink;
+    color: white;
+    font-weight: bold;
+    font-size: 0.65em;
+    border-radius: 1em;
+    padding: 0.75em;
+}
+
+#convo-img {
+    width: 2em;
+    display: inline;
+    border-radius: 50%;
+    margin: 0.5em;
+}
+
+.conversation-edit {
+    padding: 1em;
+}
+
+.conversation-edit-tools {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conversation-toolbar {
+    min-width: 20ch;
+    letter-spacing: 2ch;
+    padding: 0.5em;
+}
+
+#new-message {
+    width: 100%;
+    background: rgba(218, 227, 235, 0.25);
+    z-index: 10;
+}
+
+/* .conversation-card:has(#new-message:focus) {
+    grid-template-rows: 1fr 5fr 4fr;
+}
+
+.conversation-edit:has(#new-message:focus) {
+    min-height: 200px;
+    align-items: first-baseline;
+}
+ */
+#new-message:focus {
+    /* min-height: 150px; */
+    background: white;
+}
+
+#new-message:placeholder {
+    padding: 1em;
+}
+
+.failure {
+    border: 3px solid darkred;
+}
+
+.hide {
+    display: none;
+}
+
+button.user {
+    z-index: 100;
+}
+
+/* borrowed from SO: https://stackoverflow.com/questions/66286943/how-to-make-vertical-scrollbar-thinner-and-get-rid-of-the-right-bottom-empty-spa */
+::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+    border-radius: 20px;
+    border: 3px solid var(--scroll-bar-bg-color);
+}
+
+.user-card:not(.active) {
+    backdrop-filter: blur(10px);
+    /* background: blue; */
+}
