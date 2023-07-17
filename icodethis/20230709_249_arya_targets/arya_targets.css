@@ -152,20 +152,20 @@ img {
 }
 
 
-#card-user-lists>.user-lists-header {
+#card-user-lists>#user-lists-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1em;
 }
 
-#card-user-lists>.user-lists-header>.user-avatar {
+#card-user-lists>#user-lists-header>.user-avatar {
     display: flex;
     align-items: center;
     column-gap: 1em;
 }
 
-#card-user-lists>.user-lists-header>.user-avatar>img {
+#card-user-lists>#user-lists-header>.user-avatar>img {
     width: 3em;
 }
 
@@ -227,7 +227,6 @@ img {
     height: 3em;
 }
 
-/* https://www.youtube.com/watch?v=H2HYccAGR00 */
 .skill {
     width: var(--progress-outer-size);
     height: var(--progress-outer-size);
@@ -290,7 +289,6 @@ svg {
     padding: 2em 2em;
     font-size: 0.75em;
     color: var(--clr-secondary-text);
-    border: 1px solid hotpink;
 }
 
 #addNewListBtn>span {
@@ -298,16 +296,18 @@ svg {
 }
 
 #user-itemized-list {
+    min-height: 80%;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
+    overflow-y: scroll;
 }
 
 .item {
-    border: 1px solid purple;
     padding: 1em;
     display: flex;
     justify-content: space-between;
+    background: white;
 }
 
 .item>.itemstatus {
@@ -324,41 +324,41 @@ input[type=checkbox] {
 }
 
 .itemstatus {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     height: 25px;
     width: 25px;
-    background: none;
+    border-radius: 50%;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+/* .itemstatus::after {
+    background: orange;
     border: 1px solid gray;
     border-radius: 50%;
-}
-
-.itemstatus:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.itemstatus:has(input:checked) {
+} */
+.completed,
+.item:has(input:checked)>.itemstatus {
     background: var(--clr-secondary);
 }
 
-.itemstatus:has(:not(input:checked)):hover {
+.item:has(:not(input:checked))>.itemstatus:hover {
     border: 5px solid var(--clr-secondary);
 }
 
-/* .itemstatus:has(input:checked):after {
-    content: "✓";
-    font-family: "Font Awesome";
-    color: green;
-    font-weight: bold;
+#card-user-list {
+    background: var(--clr-card-bg-primary);
 }
-.itemstatus:after {
-    top: -0.5ch;
-    left: 0.5ch;
+
+#addNewItemBtn {
+    background: var(--clr-primary);
+    color: white;
+    padding: 0.25em 1.25em;
     width: 100%;
-    height: 100%;
-    content: "";
-    display: block;
-} */
+}
+
+#addNewItemBtn>span {
+    padding: 0 0.5em;
+}

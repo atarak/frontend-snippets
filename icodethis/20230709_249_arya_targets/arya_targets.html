@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="arya_targets.js"></script>
+    <link rel="stylesheet" href="arya_targets.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="todolist.js"></script>
-    <link rel="stylesheet" href="todolist.css">
 </head>
 
 <body>
@@ -45,6 +45,22 @@
                 </div>
             </div>
             <div class="card hide" id="card-user-lists">
+                <div id="user-lists-header">
+                    <div class="user-avatar">
+                        <img src="https://source.unsplash.com/random/900×700/?headshot&sig=1" alt="">
+                        <span user-name class="user-name" id="listsumm-user">Arya</span>
+                    </div>
+                    <div class="card-action"><button id="exit-user-lists" class="card-exit"></button></div>
+                </div>
+                <div listwrapper>
+                    <div id="search-lists">
+                        <span class="input-field">
+                            <input type="text" name="filter" id="filter-lists" onkeyup="filterFunction()">
+                        </span>
+                        <span class="search"><i class='fa-solid fa-magnifying-glass'></i></span>
+                    </div>
+                    <div id="lists"></div>
+                </div>
                 <div class="addnew" id="addnew">
                     <button id="addNewListBtn"><span><i class="fa fa-plus"></i></span>Add New List</button>
                 </div>
@@ -55,47 +71,20 @@
                         <button id="back-btn"><span><i class="fa fa-arrow-left"></i></span></button>
                         <input type="text" name="newlist" id="listname-header" placeholder="Enter new list name"
                             required class="listname" data-listindex="0">
-                        <!-- <span class="listname" id="listname-header"></span> -->
                     </div>
                     <div class="listitems" id="listitems"></div>
+                </div>
+                <div class="addnew" id="additem">
+                    <button id="addNewItemBtn" onclick="clickAddNewItem(this)"><span><i
+                                class="fa fa-plus"></i></span>Add New Item</button>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- <template id="tpl-profile">
-        <div user-wrapper>
-            <img src="https://i.pravatar.cc/150?img=11">
-            <div class="">
-                <p user-name>name</p>
-            </div>
-            <button btn-login type="button">forum</button>
-        </div>
-    
-    </template> -->
-    <template id="tpl-listsummary">
-        <div class="user-lists-header">
-            <div class="user-avatar">
-                <img src="https://source.unsplash.com/random/900×700/?headshot&sig=1" alt="">
-                <span user-name class="user-name" id="listsumm-user">Arya</span>
-            </div>
-            <div class="card-action"><button id="exit-user-lists" class="card-exit"></button></div>
-        </div>
-        <div listwrapper>
-            <div id="search-lists">
-                <span class="input-field">
-                    <input type="text" name="filter" id="filter-lists" onkeyup="filterFunction()">
-                </span>
-                <span class="search"><i class='fa-solid fa-magnifying-glass'></i></span>
-            </div>
-            <div class="lists"></div>
-        </div>
-    </template>
-
     <template id="tpl-listdesc">
-        <div class="listsummary">
+        <div class="listsummary" onclick="clickListNameToOpenItemsView(this)">
             <p data-listname class="listname" data-listindex="0">name</p>
-            <!-- <span data-listtotal data-listincomplete data-listtotal class="listprogress">numComplete</span> -->
             <div class="skill">
                 <div class="outer">
                     <div class="inner">
@@ -116,8 +105,9 @@
     </template>
     <template id="tpl-listitem">
         <div class="item">
-            <span class="itemname"></span>
-            <span class="itemstatus"><input type="checkbox" name="item-status"></span>
+            <input type="text" class="itemname" data-itemindex="0">
+            <input type="checkbox" name="item-status" class="itemstatusbox">
+            <span class="itemstatus" onclick="clickItemStatus(this);"></span>
         </div>
     </template>
 
