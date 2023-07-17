@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="flight_booking.js"></script>
+    <link rel="stylesheet" href="flight_booking.css">
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            <section id="header-nav">
+                <button class="trip-type active">Flights</button>
+                <button class="trip-type">Hotels</button>
+                <button class="trip-type">Cars</button>
+            </section>
+            <section id="trip-query" class="">
+                <div id="selected-origin-airport">
+                    <label for="origin-airport-text">Origin</label>
+                    <input type="text" name="origin-airport-text" id="origin-airport-text" class="airport-text" required
+                        placeholder="Select Origin Airport" onkeyup="filterFunction(this, 'origin-airport-list')">
+                </div>
+                <div id="origin-airport-list" class="airport-list"></div>
+                <div id="selected-destn-airport">
+                    <label for="dstn-airport-text">Destination</label>
+                    <input type="text" name="destn-airport-text" id="destn-airport-text" class="airport-text" required
+                        placeholder="Select Destination Airport" onkeyup="filterFunction(this, 'destn-airport-list')">
+                </div>
+                <div id="destn-airport-list" class="airport-list"></div>
+                <div id="travel-dates">
+                    <div id="departure-date">
+                        <label for="trip-start">Departure</label>
+                        <input type="date" id="dept-date-input" name="trip-start" value="2023-07-22" min="2018-01-01"
+                            max="2024-12-31">
+                    </div>
+                    <div id="arrival-date">
+                        <label for="trip-end">Arrival</label>
+                        <input type="date" id="dept-date-input" name="trip-end" value="2023-07-23" min="2018-01-01"
+                            max="2024-12-31">
+                    </div>
+                    <div id="passenger-count">
+                        <div id="selected-passenger-count">
+                            <label for="passenger-count-btn">Passengers</label>
+                            <button id="passenger-count-btn" onclick="clickPassengerCounter()">
+                                <span id="passenger-total" class="chg-qty">1</span>
+                                <span><i class="fa fa-user chg-qty"></i></span>
+                            </button>
+                            <div id="passenger-counter-list"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action" id="query-search">
+                    <button class="cta" onclick="clickShowCalendar()">Search</button>
+                    <button class="calendar-link">Flexible on Dates?</button>
+                </div>
+            </section>
+            <section id="calendar" class="hide">
+                <div class="card-header">
+                    <span><button class="back-btn" onclick="clickShowQuery()"><i
+                                class="fa fa-arrow-left"></i></button><i class="fa fa-plane"></i></span>
+                    <div class="card-header-summary">
+                        <span class="from-city">Bucharest</span>
+                        <!-- |<p class="from-airport">OTP</p> -->
+                        <span><i class="fa fa-arrow-right"></i></span>
+                        <span class="to-city">Tenerife (Canary Islands)</span>
+                        <!-- | --><!-- <p class="to-airport">TFS</p> -->
+                    </div>
+                </div>
+                <div class="card-banner" id="card-banner">
+                    <!-- <div class="banner-scroll-wrapper"> -->
+                    <div class="banner-scroll-nav">
+                        <button class="btn-scroll-nav prev" id="prevDateBtn"><span><i
+                                    class="fa fa-chevron-left"></i></span></button>
+                    </div>
+                    <div class="banner-box-list" id="banner-box-list">
+                    </div>
+                    <div class="banner-scroll-nav">
+                        <button class="btn-scroll-nav next" id="nextDateBtn"><span><i
+                                    class="fa fa-chevron-right"></i></span></button>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="card-summary">
+                    <div class="card-summary-from">
+                        <div class="from-date summary-date" id="summary-selected-from-date">Thu 02, May 2019</div>
+                        <div class="from-time summary-time">13:40</div>
+                        <div class="summary-city"><span class="from-city">Bucharest</span></div>
+                    </div>
+                    <div class="card-summary-travel-time"><span id="travel-time">6h 15m</span></div>
+                    <div class="card-summary-to">
+                        <div class="to-date summary-date" id="summary-selected-to-date">Thu 02, May 2019</div>
+                        <div class="to-time summary-time">17:55</div>
+                        <div class="to-city summary-city">Tenerife (Canary Islands)</div>
+                    </div>
+                </div>
+                <div class="card-cta">
+                    <button id="submitBtn" class="cta">Select Bundle</button>
+                </div>
+                <!-- <div class="card-complete hide" id="card-complete">
+                        <p class="success"><span><i class="fa fa-check"></i></span>Selection saved!</p>
+                    </div> -->
+            </section>
+        </div>
+    </main>
+</body>
+
+<template id="tpl-airport-item">
+    <button class="airport-item hide" data-countrycode="Country Code" data-regionname="Region Name"
+        data-iata="Airport Code" data-icao="Country Airport Code" data-airportname="Airport Name"
+        data-latitude="Latitude" data-longitude="longitude" onclick="clickOrigin(this)"></button>
+</template>
+
+<template id="tpl-passenger-item">
+    <div class="passenger-item hide">
+        <div class="passenger-details">
+            <p class="passenger-type">Passenger Type</p>
+            <p class="passenger-desc">Passenger Description</p>
+        </div>
+        <button class="passenger-counter-btn">
+            <i class="fa fa-minus chg-qty" onclick="clickChangeQty(this,-1)"></i><span
+                class="qty passenger-counter">1</span><i class="fa fa-plus chg-qty"
+                onclick="clickChangeQty(this,1)"></i>
+        </button>
+    </div>
+</template>
+
+<template id="tpl-box-item">
+    <button class="banner-box-item">
+        <div class="banner-box-header">
+            <span class="date"></span>
+        </div>
+        <span class="banner-box-content">
+            <span class="status" data-flightcount="0">No flights</span>
+            <span class="price"></span>
+        </span>
+    </button>
+</template>
+
+</html>
