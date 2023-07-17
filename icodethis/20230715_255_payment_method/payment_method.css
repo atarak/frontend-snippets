@@ -1,0 +1,386 @@
+:root {
+    --clr-primary: rgb(129, 207, 226);
+    --clr-accent: #555ba5;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--clr-primary);
+    color: white;
+}
+
+main {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    isolation: isolate;
+    /* height: 100%; */
+    min-height: 600px;
+    width: 60%;
+    min-width: 300px;
+    box-shadow: 15px 15px 25px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    padding: 2em;
+    background: transparent;
+}
+
+nav::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(129, 207, 226, 0.05);
+    top: 0;
+}
+
+nav::after {
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 0.1em;
+    background: rgb(129, 207, 226);
+    top: 40%;
+    z-index: -10;
+    opacity: 0.4;
+}
+
+
+
+nav>button {
+    display: grid;
+    grid-template-rows: repeat(auto, 1fr);
+    justify-items: center;
+    place-content: center;
+    color: var(--clr-accent);
+    background: transparent;
+    z-index: 5;
+    /* border: 1px solid purple; */
+    position: relative;
+}
+
+
+nav>button>i {
+    aspect-ratio: 1;
+    height: 1em;
+    zoom: 150%;
+    background: white;
+    padding: 0 0.4em;
+    position: relative;
+    z-index: 5;
+}
+
+nav>button>i::after {
+    position: absolute;
+    content: "";
+    width: 120%;
+    height: 100%;
+    top: 0em;
+    left: 0;
+    opacity: 0.8;
+    background: white;
+}
+
+nav>button.complete>i::after {
+    opacity: 0;
+}
+
+nav>button.next>i::after {
+    opacity: 0.5;
+}
+
+nav>button.next>span {
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+
+nav>button.complete>i {
+    filter: grayscale(0%);
+}
+
+nav>button>span.icon-label {
+    font-size: 0.75em;
+    font-weight: 500;
+    z-index: 6;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.section-title {
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    padding: 2em;
+}
+
+.section-content {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    padding: 0 1em;
+}
+
+.left-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1.5em;
+    padding: 0 1em;
+    min-height: 65px;
+}
+
+.right-col {
+    max-width: 100%;
+    flex-grow: 1;
+    padding: 0 1em;
+}
+
+.right-col {
+    color: var(--clr-accent);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    aspect-ratio: 2/1;
+    height: 30px;
+    min-height: max-content;
+    border: 3px solid transparent;
+    box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 0.25em 0;
+}
+
+label>img {
+    vertical-align: middle;
+}
+
+label:has(input[type="radio"]:checked) {
+    border: 3px solid var(--clr-primary);
+    box-shadow: none;
+}
+
+#credit-card-form {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 0.85em;
+    color: var(--clr-subtitle);
+    width: 100%;
+    padding-top: 0.5em;
+    font-weight: 600;
+}
+
+#card-number,
+#cvc,
+#card-name {
+    font-size: 1em;
+    height: 2.5em;
+    background: white;
+    border: 1px solid var(--clr-two);
+}
+
+#card-number,
+#card-name {
+    width: 80%;
+}
+
+#card-number::placeholder,
+#cvc::placeholder,
+#card-name::placeholder {
+    padding-left: 0.5em;
+}
+
+#card-back-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropbtn {
+    display: inline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f5fc;
+    min-width: 10ch;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--clr-primary);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.month-item:hover {
+    color: var(--clr-primary);
+    background: var(--clr-accent);
+}
+
+.month-item {
+    display: block;
+    text-align: left;
+}
+
+.year-item {
+    display: block;
+}
+
+#month-sel-btn>span,
+#year-sel-btn>span {
+    padding: 0.5em;
+    color: var(--clr-accent);
+}
+
+#month-sel-btn,
+#year-sel-btn {
+    background: white;
+    border: 1px solid var(--clr-two);
+    padding: 0.5em;
+    color: var(--clr-accent);
+}
+
+#cvc {
+    width: 5em;
+}
+
+#cta {
+    display: grid;
+    place-items: center;
+    padding: 2em;
+}
+
+#confirm-payment {
+    background: rgb(6, 131, 180);
+    color: white;
+    font-family: system-ui;
+    padding: 1em;
+    width: 100%;
+    border-radius: 0.5em;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+#confirm-payment:hover {
+    font-weight: bold;
+    box-shadow: none;
+}
+
+
+/* https://developer.mozilla.org/en-US/play */
+input:invalid+span::after {
+    position: absolute;
+    content: "✖";
+    padding-left: 5px;
+    color: #b81111;
+}
+
+input:valid+span::after {
+    position: absolute;
+    content: "✓";
+    padding-left: 5px;
+    color: #009000;
+}
+
+
+.success {
+    color: green;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .card {
+        min-width: 600px;
+        max-width: 800px;
+        height: 60%;
+        min-height: 630px;
+    }
+
+    .section-title {
+        padding: 2em 4em;
+    }
+
+    .section-content {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        padding: 0 3em;
+        column-gap: 1em;
+    }
+
+    .left-col {
+        display: block;
+        padding: 0 1em;
+    }
+
+    .right-col {
+        padding: 1em 2em;
+    }
+
+    #credit-card-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 2em;
+        height: 4em;
+        aspect-ratio: 9/6;
+        overflow: hidden;
+        border: 3px solid transparent;
+        box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    #card-back-details {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2em;
+    }
+}
