@@ -1,0 +1,245 @@
+:root {
+    --clr-bg: radial-gradient(white, 30%, #f2f5fc);
+    --clr-primary: #064b8d;
+    --clr-secondary: #88a8c8;
+    --clr-accent: #b4defd;
+    --clr-two: #d4def7;
+    --clr-subtitle: #3a70a5;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--clr-bg);
+}
+
+main {
+    height: 100dvh;
+    width: 100dvw;
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    padding: 4em 8em;
+    box-shadow: 0 0 2em 0.05em var(--clr-two);
+    display: flex;
+    flex-direction: row;
+    column-gap: 2em;
+    min-height: 593px;
+}
+
+img {
+    max-width: 100%;
+    aspect-ratio: 1;
+}
+
+.left-col>img {
+    max-width: 15em;
+}
+
+.right-col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2em;
+}
+
+#step-num {
+    color: var(--clr-secondary);
+}
+
+#step-header {
+    color: var(--clr-primary);
+}
+
+#step-instructions {
+    color: var(--clr-subtitle);
+}
+
+#step-title {
+    font-weight: 600;
+    font-size: 1.75em;
+}
+
+#payment-form {
+    display: flex;
+    column-gap: 2em;
+}
+
+label {
+    border: 2px solid var(--clr-two);
+    padding: 0.75em;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+    float: right;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+}
+
+label:has(input:checked) {
+    background: white;
+    border: 3px solid var(--clr-accent);
+    box-shadow: 0px 5px 5px 0 var(--clr-two);
+}
+
+svg {
+    display: none;
+}
+
+#payment-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo,
+.credit-card-img {
+    width: 5em;
+    object-fit: contain;
+}
+
+#paypal-confirmation>* {
+    font-size: 1.2em;
+    color: var(--clr-primary);
+}
+
+.form-label {
+    font-size: 0.85em;
+    color: var(--clr-subtitle);
+    width: 100%;
+    padding-top: 0.5em;
+    font-weight: 600;
+}
+
+#card-number,
+#cvc {
+    font-size: 1em;
+    height: 2.5em;
+    background: white;
+    border: 1px solid var(--clr-two);
+}
+
+#card-number {
+    width: 100%;
+}
+
+#card-number::placeholder,
+#cvc::placeholder {
+    padding-left: 0.5em;
+}
+
+p.display-block {
+    display: block;
+}
+
+#card-back-details {
+    display: flex;
+    column-gap: 2em;
+}
+
+.dropbtn {
+    display: inline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f5fc;
+    min-width: 10ch;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--clr-primary);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.month-item:hover {
+    color: var(--clr-primary);
+    background: var(--clr-accent);
+}
+
+.month-item {
+    display: block;
+    text-align: left;
+}
+
+.year-item {
+    display: block;
+}
+
+#month-sel-btn>span,
+#year-sel-btn>span {
+    padding: 0.5em;
+    color: var(--clr-primary);
+}
+
+#month-sel-btn,
+#year-sel-btn {
+    background: white;
+    border: 1px solid var(--clr-two);
+    padding: 0.5em;
+    color: var(--clr-primary);
+}
+
+#cvc {
+    width: 5em;
+}
+
+.disclaimer {
+    padding: 1em 0;
+}
+
+.disclaimer>* {
+    margin: 0.5em 0;
+}
+
+a {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cta {
+    background: var(--clr-primary);
+    color: white;
+    font-size: 1.2em;
+    padding: 0.75em 3em;
+}
+
+.complete {
+    display: block;
+}
+
+.success {
+    color: green;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
