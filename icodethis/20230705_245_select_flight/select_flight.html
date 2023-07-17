@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
+    <script src="select_flight.js"></script>
+    <link rel="stylesheet" href="select_flight.css">
 </head>
 
 <body>
@@ -21,49 +23,74 @@
                         <p class="to-airport">TFS</p>
                     </div>
                 </div>
-                <div class="card-banner">
+                <div class="card-banner" id="card-banner">
                     <!-- <div class="banner-scroll-wrapper"> -->
                     <div class="banner-scroll-nav">
-                        <button class="btn-scroll-nav prev"><span><i class="fa fa-chevron-left"></i></span></button>
+                        <button class="btn-scroll-nav prev" id="prevDateBtn"><span><i
+                                    class="fa fa-chevron-left"></i></span></button>
                     </div>
-                    <div class="banner-box-list">
+                    <div class="banner-box-list" id="banner-box-list">
                         <button class="banner-box-item" id="box1">
-                            <span class="banner-box-header">Tue 30, Apr</span>
+                            <div class="banner-box-header">
+                                <span class="wkday">Tue</span> <span class="monthday">30<span>, <span
+                                            class="month">Apr</span>
+                                        <span class="year hide">2019</span>
+                            </div>
                             <span class="banner-box-content">
                                 <span class="status" data-flightcount="0">No flights</span>
                                 <span class="price"></span>
                             </span>
                         </button>
                         <button class="banner-box-item" id="box2">
-                            <span class="banner-box-header">Wed 01, May</span>
+                            <div class="banner-box-header">
+                                <span class="wkday">Wed</span> <span class="monthday">01<span>, <span
+                                            class="month">May</span>
+                                        <span class="year hide">2019</span>
+                            </div>
                             <span class="banner-box-content">
                                 <span class="status" data-flightcount="0">No flights</span>
                                 <span class="price"></span>
                             </span>
                         </button>
                         <button class="banner-box-item" id="box3">
-                            <span class="banner-box-header">Thu 02, May</span>
+                            <div class="banner-box-header">
+                                <span class="wkday">Thu</span> <span class="monthday">02<span>, <span
+                                            class="month">May</span>
+                                        <span class="year hide">2019</span>
+                            </div>
                             <span class="banner-box-content">
                                 <span class="status" data-flightcount="1">From</span>
                                 <span class="price">$264</span>
                             </span>
                         </button>
                         <button class="banner-box-item" id="box4">
-                            <span class="banner-box-header">Fri 03, May</span>
+                            <div class="banner-box-header">
+                                <span class="wkday">Fri</span> <span class="monthday">03<span>, <span
+                                            class="month">May</span>
+                                        <span class="year hide">2019</span>
+                            </div>
                             <span class="banner-box-content">
                                 <span class="status" data-flightcount="0">No flights</span>
                                 <span class="price"></span>
                             </span>
                         </button>
                         <button class="banner-box-item" id="box4">
-                            <span class="banner-box-header">Sat 04, May</span>
+                            <div class="banner-box-header">
+                                <span class="wkday">Sat</span> <span class="monthday">04<span>, <span
+                                            class="month">May</span>
+                                        <span class="year hide">2019</span>
+                            </div>
                             <span class="banner-box-content">
                                 <span class="status" data-flightcount="2">From</span>
                                 <span class="price">$254</span>
                             </span>
                         </button>
                         <button class="banner-box-item" id="box5">
-                            <span class="banner-box-header">Sun 05, May</span>
+                            <div class="banner-box-header">
+                                <span class="wkday">Sun</span> <span class="monthday">05<span>, <span
+                                            class="month">May</span>
+                                        <span class="year hide">2019</span>
+                            </div>
                             <span class="banner-box-content">
                                 <span class="status" data-flightcount="0">No flights</span>
                                 <span class="price"></span>
@@ -71,7 +98,8 @@
                         </button>
                     </div>
                     <div class="banner-scroll-nav">
-                        <button class="btn-scroll-nav next"><span><i class="fa fa-chevron-right"></i></span></button>
+                        <button class="btn-scroll-nav next" id="nextDateBtn"><span><i
+                                    class="fa fa-chevron-right"></i></span></button>
                     </div>
                     <!-- </div> -->
                 </div>
@@ -89,11 +117,10 @@
                     </div>
                 </div>
                 <div class="card-cta">
-                    <button>Select Bundle</button>
+                    <button id="submitBtn">Select Bundle</button>
                 </div>
                 <div class="card-complete hide" id="card-complete">
-                    <p class="success"><span><i class="fa fa-check"></i></span>Link sent!</p>
-                    <p>Please check your mobile device.</p>
+                    <p class="success"><span><i class="fa fa-check"></i></span>Selection saved!</p>
                 </div>
             </div>
         </div>

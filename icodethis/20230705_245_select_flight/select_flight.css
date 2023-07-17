@@ -255,9 +255,26 @@ main::before {
     border: 1px solid var(--clr-primary);
 }
 
+.card-complete {
+    margin: auto;
+    padding: 2em;
+    text-align: center;
+}
+
+.success {
+    font-weight: bold;
+    color: green;
+}
+
+.success i {
+    padding: 0.5em;
+}
+
 .hide {
     display: none;
 }
+
+
 
 @media only screen and (min-width: 600px) {
     .wrapper {
@@ -310,4 +327,8 @@ main::before {
         column-gap: 0.75em;
     }
 
+
+    .hide {
+        display: none;
+    }
 }
