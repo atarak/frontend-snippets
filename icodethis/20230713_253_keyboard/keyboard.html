@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="keyboard.js"></script>
+    <link rel="stylesheet" href="keyboard.css">
+</head>
+
+<body class="bg-purple-100 flex justify-center items-center min-h-screen">
+    <main id="main">
+        <div class="screen">
+            <input id="display-text" type="text" placeholder="Start typing">
+        </div>
+        <div class="card">
+            <div class="row">
+                <button class="letter">Q</button><button class="alphanum hidden">1</button>
+                <button class="letter">W</button><button class="alphanum hidden">2</button>
+                <button class="letter">E</button><button class="alphanum hidden">3</button>
+                <button class="letter">R</button><button class="alphanum hidden">4</button>
+                <button class="letter">T</button><button class="alphanum hidden">5</button>
+                <button class="letter">Y</button><button class="alphanum hidden">6</button>
+                <button class="letter">U</button><button class="alphanum hidden">7</button>
+                <button class="letter">I</button><button class="alphanum hidden">8</button>
+                <button class="letter">O</button><button class="alphanum hidden">9</button>
+                <button class="letter">P</button><button class="alphanum hidden">0</button>
+            </div>
+            <div class="row">
+                <button class="letter">A</button><button class="alphanum hidden">!</button>
+                <button class="letter">S</button><button class="alphanum hidden">@</button>
+                <button class="letter">D</button><button class="alphanum hidden">#</button>
+                <button class="letter">F</button><button class="alphanum hidden">$</button>
+                <button class="letter">G</button><button class="alphanum hidden">%</button>
+                <button class="letter">H</button><button class="alphanum hidden">^</button>
+                <button class="letter">J</button><button class="alphanum hidden">&</button>
+                <button class="letter">K</button><button class="alphanum hidden">*</button>
+                <button class="letter">L</button><button class="alphanum hidden">(</button><button
+                    class="alphanum hidden">)</button>
+            </div>
+            <div class="row">
+                <button class="action" id="casechange" onclick="clickChangeCase()"><i
+                        class="fa fa-circle-up"></i></button>
+                <button class="letter">Z</button><button class="alphanum hidden">.</button>
+                <button class="letter">X</button><button class="alphanum hidden">,</button>
+                <button class="letter">C</button><button class="alphanum hidden">?</button>
+                <button class="letter">V</button><button class="alphanum hidden">/</button>
+                <button class="letter">B</button><button class="alphanum hidden">-</button>
+                <button class="letter">N</button><button class="alphanum hidden">'</button>
+                <button class="letter">M</button><button class="alphanum hidden">"</button>
+                <button class="action" id="backspace"><i class="fas fa-backspace"></i></button>
+            </div>
+            <div class="row">
+                <button class="action" id="alphanumchange" onclick="clickChangeAlphanum()">123</button>
+                <button class="action"><i class="fa fa-globe"></i></button>
+                <button class="action"><i class="fa fa-microphone"></i></button>
+                <button class="action" id="spacebar">Space</button>
+                <button class="action" id="search">Search</button>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
