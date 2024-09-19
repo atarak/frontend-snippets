@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui;
+    width: 100dvw;
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    position: relative;
+    max-width: 25ch;
+    color: white;
+    background-color: aqua;
+    background-image: url("https://images.unsplash.com/photo-1599749011927-9a77278bfa61");
+    background-size: 105% 105%;
+    background-position: center top;
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+    transition: background-position 350ms;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(transparent, 40%, rgba(0, 0, 0, 0.8));
+    transform: translateY(calc(100% - 10rem));
+    transition: transform 650ms 100ms;
+    z-index: -1;
+}
+
+.card:hover,
+.card:focus-within {
+    background-position: center bottom;
+}
+
+.card:hover::after,
+.card:focus-within .card::after {
+    transform: translateY(0);
+}
+
+.card-content {
+    display: grid;
+    gap: 1rem;
+
+    transform: translateY(calc(100% - 2rem));
+    transition: transform 550ms;
+}
+
+.card:hover .card-content,
+.card:focus-within .card-content {
+    transform: translateY(0);
+}
+
+.card-content>p {
+    font-family: serif;
+    font-style: italic;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 550ms 100ms;
+}
+
+.card:hover .card-content>p,
+.card:focus-within .card-content>p {
+    opacity: 1;
+}
+
+.card-content> :not(.card-title) {
+    transition:
+        opacity 550ms 100ms, transform 550ms 100ms;
+    transform: translateY(2 rem);
+}
+
+.card:hover .card-content :not(.card-title),
+.card:focus-within .card-content :not(.card-title) {
+    transform: translateY(0%);
+}
+
+.button {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem 0.625rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.825rem;
+    font-weight: 500;
+}
+
+.button:hover,
+.button:focus {
+    background-color: white;
+    color: black;
+}
