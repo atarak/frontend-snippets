@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="calendar.css">
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <div id="calendar-box-container">
+                <div id="calendar-header">
+                    <button id="btn-previous-month"><i class="fa fa-chevron-left"></i></button>
+                    <span id="header--current-month-year" data-startdate="2017-02-01T00:00"><span
+                            id="header--current-month">FEBRUARY</span> <span
+                            id="header--current-year">2017</span></span>
+                    <button id="btn-next-month"><i class="fa fa-chevron-right"></i></button>
+                </div>
+                <div id="calendar-list"></div>
+            </div>
+            <div id="daily-event-box-container">
+                <div id="selected-day">
+                    <p id="selected-day-of-week">THURSDAY</p>
+                    <p id="selected-shortday">Feb 9</p>
+                </div>
+                <div id="empty-event" class="">
+                    <i class="fa fa-calendar-day"></i>
+                    <p>No events for this day</p>
+                </div>
+                <div id="day-event-list">
+                    <!-- tpl-day-event-item goes here -->
+                </div>
+                <button id="btn-add-event" class="cta">Add Event</button>
+            </div>
+        </div>
+    </main>
+</body>
+<template id="tpl-calendar-header-item">
+    <span class="calendar-header-item">SUN</span>
+</template>
+<template id="tpl-calendar-item">
+    <button class="calendar-item">
+        <span class="calendar-date">1</span>
+        <div class="item-event-previews"></div>
+    </button>
+</template>
+<template id="tpl-day-event-item">
+    <div class="day-event-item">
+        <div class="event-details" data-event_id="1">
+            <button class="event-color" data-color="color1"></button>
+            <span class="event-title">Dinner with Dad</span>
+            <span class="event-start-time">18:00</span>
+        </div>
+        <div class="swatch-selection hide">
+            <span>Choose a category</span>
+            <div class="swatch-list">
+                <button class="swatch" data-color="color1"></button>
+                <button class="swatch" data-color="color2"></button>
+                <button class="swatch" data-color="color3"></button>
+                <button class="swatch" data-color="color4"></button>
+                <button class="swatch" data-color="color5"></button>
+            </div>
+        </div>
+    </div>
+</template>
+<script src="calendar.js"></script>
+
+</html>
