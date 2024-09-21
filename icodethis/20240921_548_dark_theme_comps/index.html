@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<!-- Change code below this line -->
+
+<body class="bg-[#181028] flex justify-center items-center min-h-screen">
+    <main>
+        <nav>
+            <ul id="nav-list">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">Features</li>
+                <li class="nav-item">Pricing</li>
+                <li class="nav-item">Contact</li>
+                <li class="nav-item cta">Sign Up</li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <div id="chart-window">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div id="controls">
+                <div id="top-controls">
+                    <div id="btn-list">
+                        <button id="options" class="cta">Options <i class="fa fa-chevron-right"></i></button>
+                        <button id="edit">Edit</button>
+                    </div>
+                    <div id="options">
+                        <ul id="option-list">
+                            <li class="option-item">Sound</li>
+                            <li class="option-item selected">Effects</li>
+                            <li class="option-item">Animations</li>
+                            <li class="option-item">Preferences</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="sliders">
+                    <div class="values">
+                        <span id="range1">
+                            0
+                        </span>
+                        <span> &dash; </span>
+                        <span id="range2">
+                            100
+                        </span>
+                    </div>
+                    <div id="slider1">
+                        <div class="slider-tracker"></div>
+                        <input type="range" name="minmax-min" id="slider-minmax-min" min="0" max="100" value="30">
+                        <input type="range" name="minmax-max" id="slider-minmax-max" min="5" max="100" value="70">
+                        <span class="slider-label">
+                            <label for="slider-minmax-min">min</label>
+                            <label for="slider-minmax-max">max</label>
+                        </span>
+                    </div>
+                    <div class="values2">
+                        <span id="tensionVal">0.4</span>
+                    </div>
+                    <div id="slider2" class="slider">
+                        <div class="slider-tracker"></div>
+                        <input type="range" name="tension" id="slider-tension" min="0" max="1" value="0.4" step="0.1">
+                        <span class="slider-label">
+                            <label for="slider-tension">0</label>
+                            <label for="slider-tension">1</label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<!-- Change code above this line -->
+
+</html>
