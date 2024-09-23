@@ -32,13 +32,13 @@ nav li {
     height: 50px;
 }
 
-nav a {
-    height: 50px;
-    padding: 0 30px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: black;
+.nav-item {
+    /* height: 50px; */
+    /* padding: 0 30px; */
+    /* text-decoration: none; */
+    /* display: flex; */
+    /* align-items: center; */
+    color: green;
 }
 
 nav a:hover {
