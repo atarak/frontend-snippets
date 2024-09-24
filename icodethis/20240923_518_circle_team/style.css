@@ -1,0 +1,93 @@
+:root {
+    --num-circles: 8;
+    --radius: 200px;
+    --inner-circle-size: 100px;
+    --r: calc((var(--radius)/2));
+    --circle-size: 40px;
+    --angle: calc(360 / var(--num-circles));
+    --rot: 0;
+    --index: 0;
+    --n_rot: 0;
+}
+
+.selected.user-pic {
+    position: absolute;
+    height: var(--inner-circle-size);
+    width: var(--inner-circle-size);
+    top: 50%;
+    left: 50%;
+    margin: calc(-1*var(--inner-circle-size)/2);
+    border-radius: 50%;
+    background-image: url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circle:nth-child(1) {
+    --index: 0;
+    /* background-color: red; */
+    background-image: url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circle:nth-child(2) {
+    --index: 1;
+    background-color: orange;
+}
+
+.circle:nth-child(3) {
+    --index: 2;
+    background-color: yellow;
+}
+
+.circle:nth-child(4) {
+    --index: 3;
+    background-color: green;
+}
+
+.circle:nth-child(5) {
+    --index: 4;
+    background-color: blue;
+}
+
+.circle:nth-child(6) {
+    --index: 5;
+    background-color: purple;
+}
+
+.circle:nth-child(7) {
+    --index: 6;
+    background-color: magenta;
+}
+
+.circle:nth-child(8) {
+    --index: 7;
+    background-color: limegreen;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--radius);
+    height: var(--radius);
+    border-radius: 50%;
+    /* border: 1px solid gray; */
+    transform: translate(-50%, -50%);
+}
+
+/* https://www.youtube.com/watch?v=oA50Li7e-Fk */
+.circle {
+    --n_rot: calc(var(--index)*var(--angle)*1deg);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 50%;
+    background-color: black;
+    margin: calc(-1*var(--circle-size)/2);
+    transform: rotate(var(--n_rot)) translate(var(--r)) rotate(calc(var(--n_rot)*-1));
+}

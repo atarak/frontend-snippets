@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container team-list">
+        <div class="circle user-pic"></div>
+        <div class="circle user-pic"></div>
+        <div class="circle user-pic"></div>
+        <div class="circle user-pic"></div>
+        <div class="circle user-pic"></div>
+        <div class="circle user-pic"></div>
+        <div class="circle user-pic"></div>
+        <div class="circle user-pic"></div>
+        <div class="selected user-pic" id="center-circle"></div>
+        <svg viewBox="0 0 512 512">
+            <path style="fill:#EFEFEF;" d="M0,256a256,256 0 1,0 512,0a256,256 0 1,0 -512,0" />
+            <path id="textcircle" style="fill:#FAFAFA;" d="M56,256a200,200 0 1,0 400,0a200,200 0 1,0 -400,0" />
+
+            <path id="textcircle1" stroke="none" fill="none" d="M56,376a240,230 0 1,1 400,0" />
+
+            <g style="font-family: sans-serif; font-weight: 400; font-size:1em;" text-anchor="middle">
+                <text fill="#B957A" dy="85" letter-spacing="8">
+                    <textPath startOffset="50%" xlink:href="#textcircle1">
+                        Ryan Smith - Backend Developer
+                    </textPath>
+                </text>
+        </svg>
+    </div>
+</body>
+
+</html>
