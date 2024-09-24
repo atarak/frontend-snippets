@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="order_summary.js"></script>
+    <link rel="stylesheet" href="order_summary.css">
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-logo">
+                        <!-- <img id="logo" src="" width="200" alt="pizza hut brands png logo"> -->
+                        <img id="logo"
+                            src="https://www.freepnglogos.com/uploads/pizza-hut-png-logo/pizza-hut-brands-png-logo-8.png"
+                            width="200" alt="pizza hut brands png logo">
+                    </div>
+                    <div class="card-header-title" id="card-header-title">
+                        <span id="subtitle">Your order from</span>
+                        <span id="title">Pizza Hut</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-items">
+                        <div class="card-item">
+                            <div class="item-description">
+                                <div class="item-name">British Pizza</div>
+                                <div class="item-size">Medium</div>
+                            </div>
+                            <div class="item-quantity">
+                                <button class="decrease"> <span class="decrease-qty"><i
+                                            class="fa fa-minus decrease-icon"></i></span></button>
+                                <input type="text" class="selectednum" pattern="/{0-9}{0,2}/" required placeholder="1"
+                                    value="1"></input>
+                                <button class="increase"><span class="increase-qty"><i
+                                            class="fa fa-plus increase-icon"></i></span></button>
+                            </div>
+                            <div class="item-cost" data-unitprice="7.99">7.99</div>
+                            <div class="item-action">
+                                <button class="remove-item"><span class="remove"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-cta1" id="card-cta1"><button class="add-item" id="add-item"><span><i
+                                    class="fa fa-coffee"></i>
+                            </span>
+                            Add a beverage</button>
+                    </div>
+                    <div class="card-summary">
+                        <div class="card-summary-stat card-summary-subtotal">
+                            <span class="summary-title">Subtotal</span>
+                            <span id="subtotal">0<span>
+                        </div>
+                        <div class="card-summary-stat card-summary-shipping">
+                            <span class="card-summary-stat summary-title">Shipping</span>
+                            <span id="shipping">0</span>
+                        </div>
+                        <div class="card-summary-stat card-summary-total">
+                            <span class="summary-title">Total (TVA incl.)</span>
+                            <span id="total-cost">0.00<span>
+                        </div>
+                    </div>
+                    <div class="card-cta"><button id="checkout">Checkout</button></div>
+                </div>
+            </div>
+    </main>
+</body>
+
+</html>

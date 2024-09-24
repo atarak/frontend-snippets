@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container" id="team-list">
+        <div class="user-pic" id="center-circle"></div>
+        <!-- credit for the helpful examples to create svgs with wrapping text -->
+        <!-- https://jsfiddle.net/tb2koyrd/ -->
+        <svg viewBox="0 0 512 512">
+            <path style="fill:#EFEFEF;" d="M0,256a256,256 0 1,0 512,0a256,256 0 1,0 -512,0" />
+            <path id="textcircle" style="fill:#FAFAFA;" d="M56,256a200,200 0 1,0 400,0a200,200 0 1,0 -400,0" />
+
+            <path id="textcircle1" stroke="none" fill="none" d="M56,376a240,230 0 1,1 400,0" />
+
+            <g style="font-family: sans-serif; font-weight: 400; font-size:2em;" text-anchor="middle">
+                <text fill="#1260de" dy="85" letter-spacing="8">
+                    <textPath startOffset="50%" xlink:href="#textcircle1" id="selected-user">
+                        Ryan Smith - Backend Developer
+                    </textPath>
+                </text>
+        </svg>
+    </div>
+</body>
+
+<template id="tpl-user-pic">
+    <div class="circle user-pic" id="0"
+        style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+        <span class="user-name hide">AA</span>
+        <span class="user-title hide">Backend Developer</span>
+    </div>
+</template>
+
+</html>

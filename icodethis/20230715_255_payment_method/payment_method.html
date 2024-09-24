@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="payment_method.js"></script>
+    <link rel="stylesheet" href="payment_method.css">
+</head>
+
+<body>
+    <main>
+        <div class="card">
+            <header>
+                <nav>
+                    <button id="cart-btn" class="complete">
+                        <i class="fa fa-cart-shopping"></i>
+                        <span class="icon-label">Shopping Cart</span></button>
+                    <button id="address-btn" class="complete">
+                        <i class="fa fa-location-dot"></i>
+                        <span class="icon-label">Delivery Address</span></button>
+                    <button id="payment-btn" class="next">
+                        <i class="fa fa-credit-card"></i>
+                        <span class="icon-label">Payment Method</span></button>
+                    <button id="preview-btn">
+                        <i class="fa fa-rectangle-list"></i>
+                        <span class="icon-label">Preview Order</span></button>
+                </nav>
+            </header>
+            <section id="payment">
+                <p class="section-title">Payment Method</p>
+                <div class="section-content">
+                    <div class="left-col">
+                        <label>
+                            <img src="https://static-00.iconduck.com/assets.00/visa-icon-512x158-pasqfxcj.png"
+                                alt="credit-card" class="credit-card-img">
+                            <input type="radio" name="paymenttype" id="creditcard-select" onclick="clickCard()"
+                                label="Credit Card" required>
+                        </label>
+                        <label>
+                            <img class="logo" src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png"
+                                alt="Paypal logo">
+                            <input type="radio" name="paymenttype" id="paypal-select" onclick="clickPaypal()">
+                        </label>
+                        <label>
+                            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg"
+                                alt="Bitcoin logo">
+                            <input type="radio" name="paymenttype" id="bitcoin-select" onclick="clickBitcoin()">
+                        </label>
+                    </div>
+                    <div class="right-col">
+                        <div id="credit-card-form" class="payment-form">
+                            <div id="card-front-details">
+                                <p class="form-label">Card Number</p>
+                                <input type="text" name="card-number" id="card-number" required pattern="[0-9]{15}"
+                                    placeholder="123 4567 8901 23456"><span class="validity"
+                                    id="valid-cardnumber"></span>
+                            </div>
+                            <div id="card-back-details">
+                                <div id="card-expiration-details">
+                                    <p class="form-label display-block">Expiration Date</p>
+                                    <div class="expiration-form">
+                                        <button onclick="toggleShowHideMonth()" class="dropbtn"
+                                            id="month-sel-btn"></button>
+                                        <div id="month-dropdown" class="dropdown-content"></div>
+
+                                        <button onclick="toggleShowHideYear()" class="dropbtn"
+                                            id="year-sel-btn"></button>
+                                        <div id="year-dropdown" class="dropdown-content"></div>
+                                    </div>
+                                </div>
+                                <div id="card-cvv-details">
+                                    <p class="form-label">CVC</p>
+                                    <input type="text" name="cvc" id="cvc" required pattern="[0-9]{3}"
+                                        placeholder="123"><span class="validity" id="valid-cvc"></span>
+                                </div>
+                            </div>
+                            <div id="payment-name">
+                                <p class="form-label">Name on Card</p>
+                                <input type="text" name="card-name" id="card-name" required
+                                    pattern="[a-zA-Z]{1,}[ a-zA-Z]+" placeholder="John Doe"><span class="validity"
+                                    id="valid-cardname"></span>
+                            </div>
+                        </div>
+                        <div id="paypal-form" class="payment-form hide">
+                            Paypal selected
+                        </div>
+                        <div id="bitcoin-form" class="payment-form hide">
+                            Bitcoin selected
+                        </div>
+                        <div id="cta">
+                            <button id="confirm-payment" class="cta">Confirm Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+<template id="tpl-momthitem">
+    <button class="month-item" onclick="setMonth(this)"></button>
+</template>
+
+<template id="tpl-yearitem">
+    <button class="year-item" onclick="setYear(this)"></button>
+</template>
+
+</html>

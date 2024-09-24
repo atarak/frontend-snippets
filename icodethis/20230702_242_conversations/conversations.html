@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="conversations.js"></script>
+    <link rel="stylesheet" href="conversations.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="show-hide-friends"><span><i class="fas fa-user-friends"></i></span></button>
+            <button class="show-message-alerts" data-messagecount="0"><span><i
+                        class="fas fa-envelope"></i></span></button>
+        </header>
+        <main>
+            <div class="left-col" id="friendbar">
+                <div class="user-cards">
+                    <div class="user-card" id="usercard1">
+                        <div class="user-card-header">
+                            <div class="missed-message-count">2</div>
+                            <div class="expand"><i class="fa fa-ellipsis-h"></i></div>
+                        </div>
+                        <div class="user-card-img"><img src="https://source.unsplash.com/random/900×700/?headshot&sig=1"
+                                alt="">
+                        </div>
+                        <div class="user-card-userinfo">
+                            <div class="user-name"><button class="user" data-contactNumber="0"><span
+                                        class="user-status"></span>Alberto Armadillo</button></div>
+                            <div class="user-title">Interaction Designer</div>
+                        </div>
+                        <button class="cta">Close</button>
+                    </div>
+                    <div class="user-card" id="usercard2">
+                        <div class="user-card-header">
+                            <div class="missed-message-count">2</div>
+                            <div class="expand"><i class="fa fa-ellipsis-h"></i></div>
+                        </div>
+                        <div class="user-card-img"><img src="https://source.unsplash.com/random/900×700/?headshot&sig=2"
+                                alt="">
+                        </div>
+                        <div class="user-card-userinfo">
+                            <div class="user-name"><button class="user" data-contactNumber="1"><span
+                                        class="user-status"></span>Estelle Warner</button></div>
+                            <div class="user-title">Art Director</div>
+                        </div>
+                        <button class="cta">Close</button>
+                    </div>
+                    <div class="user-card" id="usercard3">
+                        <div class="user-card-header">
+                            <div class="missed-message-count">6</div>
+                            <div class="expand"><i class="fa fa-ellipsis-h"></i></div>
+                        </div>
+                        <div class="user-card-img"><img src="https://source.unsplash.com/random/900×700/?headshot&sig=3"
+                                alt="">
+                        </div>
+                        <div class="user-card-userinfo">
+                            <div class="user-name"><button class="user" data-contactNumber="2"><span
+                                        class="user-status"></span>Chatty Cathy</button></div>
+                            <div class="user-title">UI Designer</div>
+                        </div>
+                        <button class="cta">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="conversation-card" id="conversation-card">
+                    <div class="conversation-header">
+                        <div class="conversation-username" id="conversation-username" data-contactNumber="1"></div>
+                        <div class="conversation-exit" id="conversation-exit"><i class="fa fa-x"></i></div>
+                    </div>
+                    <div class="conversation-content" id="conversation-content">
+                        <div id="line1" class="conversation-line sender"><span
+                                class="sender-update sent-timestamp"></span>
+                        </div>
+                        <div class="conversation-line sender"><span id="line2" class="sent-message"></span></div>
+                        <div class="conversation-line sender"><span id="line3" class="sent-message"></span></div>
+                        <div class="conversation-line status-update"><span id="line4"
+                                class="unread-message-status"></span>
+                        </div>
+                        <div class="conversation-line receiver"><span id="line5"
+                                class="receiver-update received-timestamp"></span></div>
+                        <div class="conversation-line"><span id="line6" class="received-message"></span></div>
+                        <div class="conversation-line"><span id="line7" class="received-message"></span></div>
+                    </div>
+                    <div class="conversation-edit">
+                        <div class="conversation-input">
+                            <textarea id="new-message" type="text" placeholder="Type your message here" pattern=".+"
+                                required></textarea>
+                        </div>
+                        <div class="conversation-edit-tools">
+                            <div class="conversation-toolbar">
+                                <i class="fa fa-image"></i>
+                                <i class="fa fa-camera"></i>
+                                <i class="fa fa-microphone"></i>
+                            </div>
+                            <div class="conversation-actions">
+                                <button class="cta" id="send">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

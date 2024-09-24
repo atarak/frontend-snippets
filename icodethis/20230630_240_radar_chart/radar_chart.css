@@ -1,0 +1,91 @@
+:root {
+    --clr-person1: linear-gradient(#43b2ee, #879ae9);
+    --clr-person2: linear-gradient(#f9bce2, #f2a6b0);
+}
+
+html,
+body,
+#container {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: repeating-linear-gradient(#d0d4e7 0% 35%, #e8ebf6 35% 100%);
+    font-family: system-ui;
+}
+
+#container {
+    height: calc(100dvh - 120px)
+}
+
+img {
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header::before {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 80px;
+    background: #e8ebf6;
+    border-radius: 10em 10em;
+    z-index: -1;
+}
+
+.profile-img img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.profile-img {
+    position: relative;
+    isolation: isolate;
+}
+
+.profile-img::before {
+    position: absolute;
+    content: "";
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    z-index: -1;
+    top: -2.5px;
+    left: -2.5px;
+}
+
+.person:first-of-type>.profile-img::before {
+    background: var(--clr-person1);
+}
+
+.person:last-of-type>.profile-img::before {
+    background: var(--clr-person2);
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5em;
+}
+
+.person>.user.name {
+    font-weight: bold;
+}
+
+.versus {
+    padding: 2.5em;
+}

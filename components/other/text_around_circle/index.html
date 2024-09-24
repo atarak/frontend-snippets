@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="curved-text">CURVED TEXT</div>
+    <svg id="myShape" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <path id="path1" fill="none" stroke="black" stroke-width="1" d="M 212,65
+             C 276,81 292,91 305,103 361,155 
+               363,245 311,302 300,314 286,324 
+               271,332 248,343 227,347 202,347 
+               190,346 174,343 163,339 143,333">
+            </path>
+        </defs>
+        <text id="myText">
+            <textPath xlink:href="#path1">
+                <tspan dy="0.2em">C is for Cookie, That's Good Enough For Me!</tspan>
+            </textPath>
+        </text>
+    </svg>
+    <!-- https://jsfiddle.net/tb2koyrd/ -->
+    <svg viewBox="0 0 512 512">
+        <path style="fill:#EFEFEF;" d="M0,256a256,256 0 1,0 512,0a256,256 0 1,0 -512,0" />
+        <path id="textcircle" style="fill:#FAFAFA;" d="M56,256a200,200 0 1,0 400,0a200,200 0 1,0 -400,0" />
+
+        <path id="textcircle1" stroke="blue" fill="none" d="M56,376a240,230 0 1,1 400,0" />
+        <!-- <path id="textcircle1" stroke="blue" fill="none" d="M56,356a230,230 0 1,1 400,0" /> -->
+        <!-- <path id="textcircle1" stroke="red" fill="none" d="M56,256a200,200 0 1,1 400,0" /> -->
+
+        <text style="font-family: sans-serif; font-weight: 900; font-size:1.2em; fill:#FFAD01;" dy="35" dx="90">
+            <textPath xlink:href="#textcircle">
+                Loremaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            </textPath>
+        </text>
+        <text style="font-family: sans-serif; font-weight: 900; font-size:1.2em; fill:#FF7101;" dy="35" dx="420">
+            <textPath xlink:href="#textcircle">
+                Ipsum
+            </textPath>
+        </text>
+
+        <g style="font-family: sans-serif; font-weight: 900; font-size:1.2em;" text-anchor="middle">
+            <text fill="#B957A" dy="15">
+                <textPath startOffset="80%" xlink:href="#textcircle1">
+                    Dolor abcdefghijklmnop
+                </textPath>
+            </text>
+            <text style="fill:#00B831;" dy="-10">
+                <textPath xlink:href="#textcircle1" startOffset="20%">
+                    Sit amet
+                </textPath>
+            </text>
+    </svg>
+</body>
+
+</html>

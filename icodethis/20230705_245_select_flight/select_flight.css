@@ -1,0 +1,334 @@
+:root {
+    --clr-bg: #f0f1f4;
+    --clr-primary: #f5a623;
+    --clr-accent: #f0f1f4;
+    --clr-accent-700: #a4a5a7;
+    --clr-accent-900: #454546;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: var(--clr-bg);
+    font-family: system-ui;
+}
+
+main {
+    width: 100dvw;
+    height: 100dvh;
+    position: relative;
+    overflow: hidden;
+}
+
+main::before {
+    position: absolute;
+    content: "";
+    width: 500px;
+    height: 800px;
+    bottom: 0;
+    right: 0;
+    background: var(--clr-primary);
+    border-radius: 0.5em;
+    z-index: -1;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    min-height: 10em;
+    min-width: 30em;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* //////////////////////////////////////
+// card header
+////////////////////////////////////// */
+
+.card-header {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding: 1em 2em;
+    color: var(--clr-accent-900);
+}
+
+.card-header>span>i {
+    border: 1px solid var(--clr-accent-700);
+    padding: 1em;
+    border-radius: 50%;
+}
+
+.card-header>.card-header-summary {
+    padding: 1em;
+    display: flex;
+    margin: 0;
+    color: var(--clr-accent-900);
+    font-weight: 900;
+}
+
+.card-header-summary>span>i {
+    padding: 0 0.5em;
+}
+
+.card-header-summary>p {
+    padding: 0 0.35em;
+}
+
+
+/* //////////////////////////////////////
+// card banner
+////////////////////////////////////// */
+
+.card-banner {
+    display: flex;
+    flex-direction: column;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 12fr 1fr; */
+    align-items: center;
+    padding: 1em 0;
+}
+
+.card-banner>.banner-scroll-nav {
+    display: inline-block;
+    margin: 0;
+    color: var(--clr-bg);
+}
+
+.card-banner>.banner-scroll-nav:nth-last-of-type {
+    text-align: right;
+}
+
+.card-banner>.banner-scroll-nav>button.btn-scroll-nav {
+    border: 1px solid var(--clr-accent-700);
+    background: transparent;
+    color: var(--clr-accent-700);
+    font-size: 1.1em;
+    transform: rotate(-90deg);
+}
+
+.card-banner>.banner-scroll-nav>button.btn-scroll-nav.prev {
+    border-left: none;
+    border-radius: 0 3.75em 3.75em 0;
+    padding: 0.75em 0.75em 0.75em 1em;
+}
+
+.card-banner>.banner-scroll-nav>button.btn-scroll-nav.next {
+    border-right: none;
+    border-radius: 3.75em 0 0 3.75em;
+    padding: 0.75em 1em 0.75em 0.75em;
+    float: right;
+}
+
+.card-banner>.banner-scroll-nav>button.btn-scroll-nav:hover {
+    background: var(--clr-primary);
+    color: white;
+    border: none;
+}
+
+.banner-box-list {
+    display: flex;
+    /* flex-direction: row; */
+    flex-direction: column;
+    font-size: 0.75em;
+    column-gap: 0.75em;
+}
+
+.banner-box-item {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--clr-bg);
+    padding: 1.2em 1em;
+    text-align: center;
+}
+
+.banner-box-item:nth-child(odd) {
+    background: var(--clr-bg);
+}
+
+.banner-box-item:nth-child(even) {
+    background: white;
+}
+
+.banner-box-item>.banner-box-header {
+    font-weight: 600;
+    font-size: minmax(1.2em, 14);
+    padding: 0.5em 0em;
+}
+
+.banner-box-item>span {
+    text-align: center;
+    width: 100%;
+}
+
+.banner-box-item:hover,
+.selected {
+    border-color: var(--clr-primary);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+/* //////////////////////////////////////
+// card summary
+////////////////////////////////////// */
+
+.card-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1em 5em;
+    align-items: center;
+    text-align: center;
+    color: var(--clr-accent-900);
+}
+
+.card-summary>*>.summary-date {
+    font-size: 0.65em;
+    font-weight: bold;
+}
+
+.card-summary>*>.summary-time {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-summary>*>.summary-city {
+    font-size: 0.65em;
+    text-transform: uppercase;
+}
+
+.card-summary>.card-summary-travel-time {
+    position: relative;
+    isolation: isolate;
+}
+
+.card-summary>.card-summary-travel-time::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    margin-top: 0.6em;
+    border: 3px dashed var(--clr-bg);
+    z-index: -1;
+}
+
+.card-summary>.card-summary-travel-time>#travel-time {
+    font-size: 0.65em;
+    border: 1px solid var(--clr-bg);
+    padding: 0.5em;
+    border-radius: 1em;
+    z-index: 10;
+    background: white;
+}
+
+.card-cta {
+    text-align: center;
+    padding: 2em;
+}
+
+.card-cta>button {
+    font-size: 0.75em;
+    background: var(--clr-primary);
+    color: white;
+    padding: 0.75em 2.5em;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+}
+
+.card-cta>button:hover {
+    background: white;
+    color: var(--clr-primary);
+    box-shadow: none;
+    border: 1px solid var(--clr-primary);
+}
+
+.card-complete {
+    margin: auto;
+    padding: 2em;
+    text-align: center;
+}
+
+.success {
+    font-weight: bold;
+    color: green;
+}
+
+.success i {
+    padding: 0.5em;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-content: center;
+    }
+
+    .card {
+        min-height: 10em;
+        max-height: 600px;
+        min-width: 30em;
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-banner {
+        display: grid;
+        grid-template-columns: 1fr 12fr 1fr;
+        align-items: center;
+        padding: 1em 0;
+    }
+
+
+    .card-banner>.banner-scroll-nav {
+        display: inline-block;
+        margin: 0;
+        color: var(--clr-bg);
+    }
+
+    .card-banner>.banner-scroll-nav:nth-last-of-type {
+        text-align: right;
+    }
+
+    .card-banner>.banner-scroll-nav>button.btn-scroll-nav {
+        border: 1px solid var(--clr-accent-700);
+        background: transparent;
+        color: var(--clr-accent-700);
+        font-size: 1.1em;
+        transform: rotate(0deg);
+    }
+
+    .banner-box-list {
+        display: flex;
+        flex-direction: row;
+        font-size: 0.75em;
+        column-gap: 0.75em;
+    }
+
+
+    .hide {
+        display: none;
+    }
+}

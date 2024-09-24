@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+    <script src="sms_share.js"></script>
+    <link rel="stylesheet" href="sms_share.css">
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="card">
+                <div class="close-card exit-icon"></div>
+                <div class="card-content" id="card-content">
+                    <div class="card-title">Send install link to mobile device</div>
+                    <div class="card-text">
+                        <p>Send via SMS or visit the private URL on the mobile device to install the app directly to the
+                            device.</p>
+                        <p><small>Select your country from the dropdown list to add the country code.</small></p>
+                        </p><small id="phone-format">Mobile Number Format: 123-456-7890</small></p>
+                    </div>
+                    <div class="input-field">
+                        <div class="user-inputs">
+                            <div class="dropdown">
+                                <button onclick="toggleShowHide()" class="dropbtn" id="country-sel-btn"></button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <input type="text" placeholder="Search..." id="myInput" class="searchbar show"
+                                        onkeyup="filterFunction()">
+                                    <!-- <button class="country-item" data-ccode="1"><span class="country-flag fi fi-us"></span>US</button> -->
+                                </div>
+                            </div>
+                            <div class="user-input-text">
+                                <input type="text" placeholder name="phoneNumber" id="countryCode" min-width=2>
+                            </div>
+                            <div class="user-input-text">
+                                <input type="tel" placeholder="Enter your mobile number" name="phoneNumber"
+                                    id="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><span
+                                    class="validity" id="valid-phone"></span>
+                            </div>
+                        </div>
+                        <button id="send" value="Send" class="cta">Send</button>
+                    </div>
+                    <div class="card-text subtitle">Share Link</div>
+                    <div class="link-info">
+                        <div class="text-to-copy" id="text-to-copy">www.icodethis.com</div>
+                        <button class="copy-text" id="copy-text" onclick="copyContent()">Copy</button>
+                    </div>
+                </div>
+                <div class="card-complete hide" id="card-complete">
+                    <p class="success"><span><i class="fa fa-check"></i></span>Link sent!</p>
+                    <p>Please check your mobile device.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

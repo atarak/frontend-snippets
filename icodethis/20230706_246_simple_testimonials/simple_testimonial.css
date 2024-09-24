@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+main {
+    padding: 4em;
+}
+
+h1 {
+    padding: 2em 0;
+}
+
+.card-list {
+    display: flex;
+    column-gap: 4em;
+}
+
+.card {
+    max-height: 250px;
+    max-width: 250px;
+    background: #fafafa;
+    position: relative;
+    padding: 2em;
+    box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+.card {
+    width: 50px;
+    height: 50px;
+    background: rgb(225, 44, 225);
+    z-index: 10;
+    transform: rotate(45deg);
+
+} */
+
+.card::after {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgb(225, 44, 225);
+    z-index: 10;
+}
+
+/* .card::after {
+    position: absolute;
+    content: "";
+    width: 250px;
+    height: 100%;
+    outline: solid 3px rgb(40, 39, 39);
+    top: 10%;
+    left: 10%;
+    z-index: -1;
+} */
+
+.quote {
+    position: relative;
+    padding: 1em;
+    letter-spacing: 0.4;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.quote::before {
+    position: absolute;
+    content: "\"";
+    left: -1ch;
+    top: -1ch;
+    font-size: 3em;
+    font-family: 'Courier New';
+}
+
+.quote::after {
+    position: absolute;
+    content: "\"";
+    bottom: -1ch;
+    right: -1ch;
+    font-size: 3em;
+    font-family: serif;
+}
+
+.person-name {
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+.person-title {
+    font-size: 0.65em;
+}
