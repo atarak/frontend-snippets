@@ -100,6 +100,7 @@ body {
 .two-col {
   background: #136c72;
   color: var(--clr-neutral-light);
+  padding: 2em 0;
 }
 
 .col {
