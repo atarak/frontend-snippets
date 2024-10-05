@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ict_circle2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="ict_circl2.js"></script>
+</head>
+
+<body>
+    <main>
+        <section id="kpis">
+            <div id="types">
+                <p class="section-title">Projects by Type</p>
+                <div id="kpi-graphs">
+                    <div class="kpi">
+                        <div class="outer">
+                            <div class="inner">
+                                <p id="number1" class="kpi_pct">26%</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                <defs>
+                                    <linearGradient id="GradientColor">
+                                        <stop offset="0%" stop-color="#da22ff" />
+                                        <stop offset="100%" stop-color="#9733ee" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="40" cy="40" r="25" stroke-linecap="round" id="my-circle" />
+                            </svg>
+                        </div>
+                        <p class="kpi-label">Software Development</p>
+                    </div>
+                    <div class="kpi">
+                        <div class="outer">
+                            <div class="inner">
+                                <p id="number2" class="kpi_pct">65%</p>
+                            </div>
+                            <svg version="2.0">
+                                <use href="#my-circle" />
+                            </svg>
+                        </div>
+                        <p class="kpi-label">Marketing</p>
+                    </div>
+                    <div class="kpi">
+                        <div class="outer">
+                            <div class="inner">
+                                <p id="number3" class="kpi_pct">8%</p>
+                            </div>
+                            <svg version="2.0">
+                                <use href="#my-circle" />
+                            </svg>
+                        </div>
+                        <p class="kpi-label">Sales</p>
+                    </div>
+                    <div class="kpi">
+                        <div class="outer">
+                            <div class="inner">
+                                <p id="number4" class="kpi_pct">3%</p>
+                            </div>
+                            <svg version="2.0">
+                                <use href="#my-circle" />
+                            </svg>
+                        </div>
+                        <p class="kpi-label">Business</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div id="revenue">
+                <p class="section-title">Revenue</p>
+                <div id="chart-window">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </section>
+        <section id="managers">
+            <p class="section-title">Projects by Manager</p>
+            <ul id="star-stats">
+                <li class="star-stat">
+                    <p class="manager-name">Jessi Olahan</p>
+                    <span class="star-bar">
+                        <div class="progress" id="progress1"></div>
+                        <div class="progress-value">43%</div>
+                    </span>
+                </li>
+                <li class="star-stat">
+                    <p class="manager-name">Marci Vlasov</p>
+                    <span class="star-bar">
+                        <div class="progress" id="progress2"></div>
+                        <div class="progress-value">24%</div>
+                    </span>
+                </li>
+                <li class="star-stat">
+                    <p class="manager-name">Robbyn Rogeron</p>
+                    <span class="star-bar">
+                        <div class="progress" id="progress3"></div>
+                        <div class="progress-value">31%</div>
+                    </span>
+                </li>
+                <li class="star-stat">
+                    <p class="manager-name">Lucio O'Lyhane</p>
+                    <span class="star-bar">
+                        <div class="progress" id="progress4"></div>
+                        <div class="progress-value">12%</div>
+                    </span>
+                </li>
+                <li class="star-stat">
+                    <p class="manager-name">Elwin Couttes</p>
+                    <span class="star-bar">
+                        <div class="progress" id="progress5"></div>
+                        <div class="progress-value">6%</div>
+                    </span>
+                </li>
+                <li class="star-stat">
+                    <p class="manager-name">Coraline Caldwell</p>
+                    <span class="star-bar">
+                        <div class="progress" id="progress6"></div>
+                        <div class="progress-value">1%</div>
+                    </span>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
