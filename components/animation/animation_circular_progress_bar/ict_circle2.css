@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --kpi-circle-r: 60px;
+    --kpi-circle-stroke: 6px;
+    --stroke-max: 450;
+
+    --progress: 0;
+
+    --clr-neutral1: lightgray;
+    --clr-accent: rgb(202, 78, 34);
+}
+
+body {
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+main {
+    position: relative;
+    background: white;
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: space-around;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    outline: 2rem solid rgba(209, 207, 207, 0.295);
+}
+
+#kpis {
+    position: relative;
+    /* border: 1px solid blue; */
+    display: grid;
+    grid-template-rows: 50% 50%;
+
+    padding: 1em;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 1em 0;
+}
+
+#types {
+    position: relative;
+    /* height: 200px; */
+}
+
+#kpi-graphs {
+    position: relative;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    /* gap: 1.5em; */
+}
+
+.kpi {
+    position: relative;
+}
+
+.outer {
+    position: relative;
+    height: var(--kpi-circle-r);
+    width: var(--kpi-circle-r);
+    padding: 6.5px;
+    box-shadow: 6px 6px 12px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(225, 222, 222, 0.7);
+    border-radius: 50%;
+    margin: auto;
+}
+
+.inner {
+    height: calc(0.75 * var(--kpi-circle-r));
+    width: calc(0.75 * var(--kpi-circle-r));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0px rgb(0, 0, 0, 0.15),
+        0px 12px 10px -10px rgb(0, 0, 0, 0.05);
+}
+
+.kpi_pct {
+    position: relative;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #555;
+    text-align: center;
+    width: 100%;
+}
+
+circle {
+    fill: none;
+    stroke: var(--clr-accent);
+    stroke-width: 6px;
+    stroke-dasharray: var(--stroke-max);
+    stroke-dashoffset: var(--stroke-max);
+    animation: anim 3s linear forwards;
+}
+
+svg {
+    position: relative;
+    transform: translate(-15px, -102px) rotate(270deg);
+    height: calc(var(--kpi-circle-r)*2);
+    width: calc(var(--kpi-circle-r)*2);
+}
+
+.kpi:nth-child(1) {
+    --dashoffset: var(--dashoffset1);
+}
+
+.kpi:nth-child(2) {
+    --dashoffset: var(--dashoffset2);
+}
+
+.kpi:nth-child(3) {
+    --dashoffset: var(--dashoffset3);
+}
+
+.kpi:nth-child(4) {
+    --dashoffset: var(--dashoffset4);
+}
+
+@keyframes anim {
+    100% {
+        stroke-dashoffset: var(--dashoffset);
+    }
+}
+
+.kpi-label {
+    font-size: 0.5rem;
+    text-align: center;
+    padding: 1em;
+}
+
+#revenue {
+    position: relative;
+    min-height: 250px;
+}
+
+#managers {
+    padding: 1em;
+}
+
+#star-stats {
+    list-style: none;
+    font-size: 0.65rem;
+}
+
+.star-stat {
+    padding: 0.25rem 0;
+}
+
+.star-bar {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    gap: 1em;
+}
+
+#progress1 {
+    --progress: 43%;
+}
+
+#progress2 {
+    --progress: 24%;
+}
+
+#progress3 {
+    --progress: 31%;
+}
+
+#progress4 {
+    --progress: 12%;
+}
+
+#progress5 {
+    --progress: 6%;
+}
+
+#progress6 {
+    --progress: 1%;
+}
+
+.progress {
+    background: linear-gradient(90deg, var(--clr-accent) 0% var(--progress), var(--clr-neutral1) var(--progress), var(--clr-neutral1) 100%);
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+
+    height: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        display: grid;
+        grid-template-rows: 60% 40%;
+        grid-template-columns: 100%;
+        width: 100%;
+        overflow-y: auto;
+        justify-content: center;
+    }
+
+    #managers {
+        grid-row: 2;
+        width: 100%;
+    }
+
+    #kpis {
+        display: grid;
+        grid-template-rows: 40% 60%;
+    }
+
+    #types {
+        height: 100%;
+    }
+
+    #kpi-graphs {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        /* min-height: 300px; */
+    }
+
+    #revenue {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+}
