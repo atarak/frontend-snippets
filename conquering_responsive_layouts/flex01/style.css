@@ -87,20 +87,28 @@ body {
 .row {
   display: flex;
   gap: 0.5em;
-  padding: 2em 0;
 }
 
-.container:has(.row):nth-child(odd) {
+.three-col {
+  padding: 3em 0;
+}
+
+.three-col .col__title {
+  color: #87629a;
+}
+
+.two-col {
   background: #136c72;
   color: var(--clr-neutral-light);
 }
 
-.container:has(.row):nth-child(even) .col__title {
-  color: #87629a;
+.col {
+  width: 100%;
+  text-align: center;
 }
 
-.col {
-  text-align: center;
+.col+.col {
+  margin-left: 30px;
 }
 
 .col__title {
