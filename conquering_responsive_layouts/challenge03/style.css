@@ -1,0 +1,81 @@
+/* INSTRUCTIONS
+ *
+ * 1) Keep the text inside .intro-content
+ *    in the same place, but have the background
+ *    extend from one side of the viewport
+ *    to the other, no matter how wide or narrow
+ *    the browser is.
+ *
+ * 2) Limit the maximum width of the text in the
+ *    bottom area.
+ *
+ * You may modify the HTML if needed
+ * (you probably should for this challenge)
+ *
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #23424a;
+  --clr-acccent-light: #38cfd9;
+  --clr-neutral-dark: #23424a;
+  --clr-neutral-light: #fff;
+  --font-size1: 48px;
+  --font-size2: 21px;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: var(--font-size1);
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-size2);
+}
+
+.container {
+  width: 50%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.intro {
+  background: var(--clr-primary);
+  color: var(--clr-neutral-light);
+  padding: 50px 0;
+}
+
+.intro-content p {
+  padding-bottom: 2rem;
+}
+
+.btn-cta {
+  background: var(--clr-acccent-light);
+  color: var(--clr-neutral-dark);
+  border-radius: 20px;
+  padding: 0.5em 1.75em;
+  width: max-content;
+  text-transform: uppercase;
+}
