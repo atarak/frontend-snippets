@@ -1,20 +1,8 @@
-/* INSTRUCTIONS
- *
- * 1) Keep the text inside .intro-content
- *    in the same place, but have the background
- *    extend from one side of the viewport
- *    to the other, no matter how wide or narrow
- *    the browser is.
- *
- * 2) Limit the maximum width of the text in the
- *    bottom area.
- *
- * You may modify the HTML if needed
- * (you probably should for this challenge)
- *
- */
-
-* {
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -23,8 +11,10 @@
   --clr-acccent-light: #38cfd9;
   --clr-neutral-dark: #23424a;
   --clr-neutral-light: #fff;
-  --font-size1: 48px;
-  --font-size2: 21px;
+  --font-size1: 4rem;
+  /* 48px */
+  --font-size2: 1.3rem;
+  /* -21px */
 }
 
 .roboto-black {
@@ -56,26 +46,39 @@ body {
 }
 
 .container {
-  width: 50%;
-  max-width: 750px;
+  width: 80%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.intro {
+.hero {
   background: var(--clr-primary);
   color: var(--clr-neutral-light);
   padding: 50px 0;
 }
 
-.intro-content p {
-  padding-bottom: 2rem;
+.hero__text {
+  width: 80%;
+  text-wrap: balance;
 }
 
-.btn-cta {
+.hero p {
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.btn {
+  display: inline-block;
   background: var(--clr-acccent-light);
   color: var(--clr-neutral-dark);
-  border-radius: 20px;
-  padding: 0.5em 1.75em;
+  border-radius: 100px;
+  padding: 0.75em 1.75em;
   width: max-content;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.75;
 }
